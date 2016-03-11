@@ -1,0 +1,39 @@
+javax.portlet.title = M\u1EABu ki\u1EC3m \u0111\u1EBFm
+javax.portlet.short-title = M\u1EABu ki\u1EC3m \u0111\u1EBFm
+javax.portlet.description = M\u1EABu ki\u1EC3m \u0111\u1EBFm
+
+trang-thai=Tr\u1EA1ng th\u00E1i
+
+
+
+ma-tinh = T\u1EC9nh/TP
+ma-huyen = Qu\u1EADn/Huy\u1EC7n
+ma-xa = Ph\u01B0\u1EDDng/X\u00E3
+mau-ra-soat = M\u1EABu r\u00E0 so\u00E1t
+nam = N\u0103m
+add-mau-ngau-nhien = Th\u00EAm m\u1EABu ng\u1EABu nhi\u00EAn
+so-mau = S\u1ED1 m\u1EABu
+so-mau-chon = S\u1ED1 m\u1EABu ch\u1ECDn
+so-mau-du-phong = S\u1ED1 m\u1EABu d\u1EF1 ph\u00F2ng
+stt = STT
+no-result-were-found = Kh\u00F4ng c\u00F3 d\u1EEF li\u1EC7u \u0111\u01B0\u1EE3c t\u00ECm th\u1EA5y
+tong-so-mau = T\u1ED5ng s\u1ED1 m\u1EABu
+xem-chi-tiet-ho-chon = Xem chi ti\u1EBFt h\u1ED9 ch\u1ECDn m\u1EABu
+thon-xom = Th\u00F4n x\u00F3m
+ten-chu-ho = T\u00EAn ch\u1EE7 h\u1ED9
+nam-chon-mmau = N\u0103m ch\u1ECDn m\u1EABu
+vshgd-da-ton-tai-trong-ke-hoach = V\u1EC7 sinh h\u1ED9  \u0111\u00ECnh c\u00F3 trong k\u1EBF ho\u1EA1ch ki\u1EC3m \u0111\u1EBFm
+ty-le-sai-so = T\u1EF7 l\u1EC7 sai s\u1ED1 (%)
+seed-number = Tham s\u1ED1 ch\u1ECDn m\u1EABu
+seed-number-desc = V\u1EDBi m\u1ED7i tham s\u1ED1 \u0111\u01B0\u1EE3c ch\u1ECDn s\u1EBD \u0111\u01B0a ra m\u1ED9t danh s\u00E1ch m\u1EABu \u0111\u01B0\u1EE3c ch\u1ECDn (nh\u1EADp s\u1ED1 t\u1EEB 0 \u0111\u1EBFn 1000)
+
+
+
+##data
+trang-thai-ho-gia-dinh-0=Ch\u01B0a ki\u1EC3m \u0111\u1EBFm
+trang-thai-ho-gia-dinh-1=\u0110\u00E3 c\u00F3 k\u1EBF ho\u1EA1ch
+trang-thai-ho-gia-dinh-2=C\u00F3 nh\u00E0 ti\u00EAu HVS x\u00E2y m\u1EDBi
+trang-thai-ho-gia-dinh-3=C\u00F3 nh\u00E0 ti\u00EAu HVS
+trang-thai-ho-gia-dinh-4=Nh\u00E0 ti\u00EAu kh\u00F4ng HVS
+trang-thai-ho-gia-dinh-5=Kh\u00F4ng c\u00F3 nh\u00E0 ti\u00EAu
+trang-thai-ho-gia-dinh-8=\u0110\u00E3 h\u1EE7y

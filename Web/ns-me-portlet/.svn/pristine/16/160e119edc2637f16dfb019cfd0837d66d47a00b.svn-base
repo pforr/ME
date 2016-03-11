@@ -1,0 +1,50 @@
+<%@page import="java.text.DateFormat"%>
+<%@page import="java.util.Date"%>
+<%@page import="com.liferay.portal.kernel.util.Validator"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="com.liferay.portal.kernel.dao.orm.QueryUtil"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.HoGiaDinhBussiness"%>
+<%@page import="vn.dtt.sol.ns.reporting.HoGiaDinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.service.DauNoiNuocLocalServiceUtil"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%@page import="vn.dtt.sol.ns.reporting.DauNoiNuocReportModel"%>
+<%@page import="vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc"%>
+<%@page import="org.apache.commons.beanutils.BeanComparator"%>
+<%@page import="vn.dtt.sol.ns.tramcap.business.DauNoiNuocBusiness"%>
+<%
+
+/* List<HoGiaDinhReportModel> resultBase = new ArrayList<HoGiaDinhReportModel>(
+		HoGiaDinhBussiness.getListHoGiaDinhByTypeUser(userMapping, maTinh, maHuyen, maXa, "", trangThai, namBaoCao,namBaoCaoVstx,ngayDauNoi,idNguoiTao,advText, searchContainer.getStart(), searchContainer.getEnd())); */
+		
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+DateFormat format = new SimpleDateFormat("dd-MM-yyyy");
+if(Validator.isNotNull(ngayKiemDem)){
+	try{
+		Date tempNgayKiemDem = format.parse(ngayKiemDem);
+		ngayKiemDem =  sdf.format(tempNgayKiemDem);
+	}catch(Exception e){
+		
+	}
+}
+
+if(Validator.isNotNull(ngayTao)){
+	try{
+		Date tempNgayTao = format.parse(ngayTao);
+		ngayTao =  sdf.format(tempNgayTao);
+	}catch(Exception e){
+		
+	}
+}
+
+
+
+List<HoGiaDinhReportModel> resultBase = new ArrayList<HoGiaDinhReportModel>(
+		HoGiaDinhBussiness.searchVeSinhGiaDinh(userMapping, maTinh, maHuyen, maXa, thonXom, trangThai, danhGiaKiemDem, kiemDemVien, giamSatVien, ngayKiemDem, namBaoCao, namBaoCaoVstx, idNguoiTao, ngayTao, advText, searchContainer.getStart(), searchContainer.getEnd(), null));
+results = resultBase;
+//total = HoGiaDinhBussiness.countHoGiaDinhByTypeUser(userMapping, maTinh, maHuyen, maXa, "", trangThai, namBaoCao,namBaoCaoVstx,ngayDauNoi,idNguoiTao,advText, QueryUtil.ALL_POS, QueryUtil.ALL_POS);
+
+total = HoGiaDinhBussiness.searchCountVeSinhGiaDinh(userMapping, maTinh, maHuyen, maXa, thonXom, trangThai, danhGiaKiemDem, kiemDemVien, giamSatVien, ngayKiemDem, namBaoCao, namBaoCaoVstx, idNguoiTao, ngayTao, advText);
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

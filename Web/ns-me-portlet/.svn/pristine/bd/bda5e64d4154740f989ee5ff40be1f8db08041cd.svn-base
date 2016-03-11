@@ -1,0 +1,245 @@
+package vn.dtt.sol.ns.daunoinuoc.search;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+import javax.portlet.PortletRequest;
+
+import com.liferay.portal.kernel.dao.search.DisplayTerms;
+import com.liferay.portal.kernel.util.ParamUtil;
+
+public class DauNoiNuocDisplayTerms extends DisplayTerms {
+	SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yy");
+	public static final String TRAM_CAP_NUOC_ID = "tramCapNuocId";
+	public static final String MA_TINH = "maTinh";
+	public static final String MA_HUYEN = "maHuyen";
+	public static final String MA_XA = "maXa";
+	public static final String TRANG_THAI = "trangThai";
+	public static final String NAM_BAO_CAO = "namBaoCao";
+	public static final String KET_QUA_KIEM_DEM = "ketQuaKiemDem";
+	public static final String KIEM_DEM_VIEN_ID = "kiemDemVienId";
+	public static final String GIAM_SAT_VIEN_ID = "giamSatVienID";
+	public static final String NGAY_KIEM_DEM = "ngayKiemDem";
+	public static final String NGUOI_TAO_ID = "idNguoiTao";
+	public static final String NGAY_TAO = "ngayTao";
+	public static final String TEN_CHU_HO = "tenChuHo";
+	public static final String NGAY_NHAP = "ngayNhap";
+
+	public DauNoiNuocDisplayTerms(PortletRequest portletRequest) {
+		super(portletRequest);
+		Date limitDate = new Date();
+	
+		try {
+
+			limitDate = sdf.parse("01-01-1900");
+		} catch (Exception e) {
+
+		}
+
+		// TODO Auto-generated constructor stub
+		maTinh = ParamUtil.getString(portletRequest, MA_TINH);
+		maHuyen = ParamUtil.getString(portletRequest, MA_HUYEN);
+		maXa = ParamUtil.getString(portletRequest, MA_XA);
+		tramCapNuocId = ParamUtil.getInteger(portletRequest, TRAM_CAP_NUOC_ID);
+		trangThai = ParamUtil.getInteger(portletRequest, TRANG_THAI, -1);
+		namBaoCao = ParamUtil.getInteger(portletRequest, NAM_BAO_CAO, -1);
+		ketQuaKiemDem = ParamUtil.getInteger(portletRequest, KET_QUA_KIEM_DEM, -1);
+		kiemDemVienId = ParamUtil.getString(portletRequest, KIEM_DEM_VIEN_ID);
+		ngayKiemDem = ParamUtil.getDate(portletRequest, NGAY_KIEM_DEM, sdf,
+				limitDate);
+		idNguoiTao = ParamUtil.getLong(portletRequest, NGUOI_TAO_ID);
+		ngayTao = ParamUtil.getDate(portletRequest, NGAY_TAO, sdf, limitDate);
+		tenChuHo = ParamUtil.getString(portletRequest, TEN_CHU_HO);
+		giamSatVienID = ParamUtil.getLong(portletRequest, GIAM_SAT_VIEN_ID);
+		ngayNhap = ParamUtil.getDate(portletRequest, NGAY_NHAP, sdf, limitDate);
+
+	}
+
+	/**
+	 * @return the ketQuaKiemDem
+	 */
+	public int getKetQuaKiemDem() {
+		return ketQuaKiemDem;
+	}
+
+	/**
+	 * @param ketQuaKiemDem
+	 *            the ketQuaKiemDem to set
+	 */
+	public void setKetQuaKiemDem(int ketQuaKiemDem) {
+		this.ketQuaKiemDem = ketQuaKiemDem;
+	}
+
+	/**
+	 * @return the kiemDemVienId
+	 */
+	public String getKiemDemVienId() {
+		return kiemDemVienId;
+	}
+
+	/**
+	 * @param kiemDemVienId
+	 *            the kiemDemVienId to set
+	 */
+	public void setKiemDemVienId(String kiemDemVienId) {
+		this.kiemDemVienId = kiemDemVienId;
+	}
+
+	/**
+	 * @return the giamSatVienID
+	 */
+	public long getGiamSatVienID() {
+		return giamSatVienID;
+	}
+
+	/**
+	 * @param giamSatVienID
+	 *            the giamSatVienID to set
+	 */
+	public void setGiamSatVienID(long giamSatVienID) {
+		this.giamSatVienID = giamSatVienID;
+	}
+
+	/**
+	 * @return the ngayKiemDem
+	 */
+	public Date getNgayKiemDem() {
+		return ngayKiemDem;
+	}
+
+	/**
+	 * @param ngayKiemDem
+	 *            the ngayKiemDem to set
+	 */
+	public void setNgayKiemDem(Date ngayKiemDem) {
+		this.ngayKiemDem = ngayKiemDem;
+	}
+
+	/**
+	 * @return the idNguoiTao
+	 */
+	public long getIdNguoiTao() {
+		return idNguoiTao;
+	}
+
+	/**
+	 * @param idNguoiTao
+	 *            the idNguoiTao to set
+	 */
+	public void setIdNguoiTao(long idNguoiTao) {
+		this.idNguoiTao = idNguoiTao;
+	}
+
+	/**
+	 * @return the ngayTao
+	 */
+	public Date getNgayTao() {
+		return ngayTao;
+	}
+
+	/**
+	 * @param ngayTao
+	 *            the ngayTao to set
+	 */
+	public void setNgayTao(Date ngayTao) {
+		this.ngayTao = ngayTao;
+	}
+
+	/**
+	 * @return the tenChuHo
+	 */
+	public String getTenChuHo() {
+		return tenChuHo;
+	}
+
+	/**
+	 * @param tenChuHo
+	 *            the tenChuHo to set
+	 */
+	public void setTenChuHo(String tenChuHo) {
+		this.tenChuHo = tenChuHo;
+	}
+
+	protected int tramCapNuocId;
+	protected String maTinh;
+	protected String maHuyen;
+	protected String maXa;
+	protected int trangThai;
+	protected int namBaoCao;
+	protected int ketQuaKiemDem;
+	protected String kiemDemVienId;
+	protected long giamSatVienID;
+	protected Date ngayKiemDem;
+	protected long idNguoiTao;
+	protected Date ngayTao;
+	protected String tenChuHo;
+	protected Date ngayNhap;
+	
+
+	public int getTramCapNuocId() {
+		return tramCapNuocId;
+	}
+
+	public void setTramCapNuocId(int tramCapNuocId) {
+		this.tramCapNuocId = tramCapNuocId;
+	}
+
+	public String getMaTinh() {
+		return maTinh;
+	}
+
+	public void setMaTinh(String maTinh) {
+		this.maTinh = maTinh;
+	}
+
+	public String getMaHuyen() {
+		return maHuyen;
+	}
+
+	public void setMaHuyen(String maHuyen) {
+		this.maHuyen = maHuyen;
+	}
+
+	public String getMaXa() {
+		return maXa;
+	}
+
+	public void setMaXa(String maXa) {
+		this.maXa = maXa;
+	}
+
+	public int getTrangThai() {
+		return trangThai;
+	}
+
+	public void setTrangThai(int trangThai) {
+		this.trangThai = trangThai;
+	}
+
+	public int getNamBaoCao() {
+		return namBaoCao;
+	}
+
+	public void setNamBaoCao(int namBaoCao) {
+		this.namBaoCao = namBaoCao;
+	}
+
+	
+	public static String getGiamSatVienId() {
+		return GIAM_SAT_VIEN_ID;
+	}
+
+	public static String getNguoiTaoId() {
+		return NGUOI_TAO_ID;
+	}
+
+	public  Date getNgayNhap() {
+		return ngayNhap;
+	}
+
+	public void setNgayNhap(Date ngayNhap) {
+		this.ngayNhap = ngayNhap;
+	}
+	
+	
+}

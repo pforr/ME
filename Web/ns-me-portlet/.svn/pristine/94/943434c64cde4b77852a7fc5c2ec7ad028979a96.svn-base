@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ketquaxetnghiemnuoc_subreport2_subreport1" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="cc3e50fd-7920-4715-bfab-1a42e91a6adc">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="datHayKo" class="java.lang.Integer">
+		<fieldDescription><![CDATA[datHayKo]]></fieldDescription>
+	</field>
+	<field name="huyen" class="java.lang.String">
+		<fieldDescription><![CDATA[huyen]]></fieldDescription>
+	</field>
+	<field name="soPhieuXetNghiem" class="java.lang.String">
+		<fieldDescription><![CDATA[soPhieuXetNghiem]]></fieldDescription>
+	</field>
+	<field name="tenTramYTe" class="java.lang.String">
+		<fieldDescription><![CDATA[tenTramYTe]]></fieldDescription>
+	</field>
+	<variable name="COUNT_DATHAYKO" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[($F{datHayKo} == 2) ? 1 : 0]]></variableExpression>
+	</variable>
+	<variable name="TOTAL_REPORT" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{huyen}+$F{tenTramYTe}+$F{soPhieuXetNghiem}+$F{datHayKo}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="20" uuid="334379b7-3290-4792-ad71-0a254d8d421d"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" isPrintRepeatedValues="false" x="50" y="0" width="110" height="20" isPrintInFirstWholeBand="true" uuid="c01bf744-3fcb-4c3b-ab58-687edc6a6012"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{huyen} != null && $F{huyen}.trim().length() > 0) ? $F{huyen} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="160" y="0" width="160" height="20" uuid="9bdf48cf-2ed4-45c7-b93a-49718910bff9"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tenTramYTe} != null && $F{tenTramYTe}.trim().length() > 0) ? $F{tenTramYTe} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="320" y="0" width="120" height="20" uuid="732c0760-8553-44ca-8ac1-9dbe3ba8be1f"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{soPhieuXetNghiem} != null && $F{soPhieuXetNghiem}.trim().length() > 0) ? $F{soPhieuXetNghiem} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="440" y="0" width="115" height="20" uuid="1fccd392-ae87-4e56-869f-fcbd87673068"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{datHayKo} != null ) ? ($F{datHayKo} == 2) ?"Đạt" :"Không đạt" : 0)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="50" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="439" height="50" uuid="ce1f2b3b-7aa9-4322-80bb-7cae57482ed4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tổng"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="440" y="0" width="115" height="50" uuid="82c5ab10-7010-45fb-9f29-c86ca6269cd8"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($V{COUNT_DATHAYKO} != null ) ? $V{COUNT_DATHAYKO} : 0)+"/"+(($V{TOTAL_REPORT} != null ) ? $V{TOTAL_REPORT} : 0) + " Đạt"]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

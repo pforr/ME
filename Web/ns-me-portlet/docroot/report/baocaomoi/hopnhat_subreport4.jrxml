@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hopnhat_subreport4" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="35b46969-6bf9-4d23-8a17-1c26098fc6ef">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="coNhaTieu" class="java.lang.Integer">
+		<fieldDescription><![CDATA[coNhaTieu]]></fieldDescription>
+	</field>
+	<field name="coNhaTieuHVS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[coNhaTieuHVS]]></fieldDescription>
+	</field>
+	<field name="huyen" class="java.lang.String">
+		<fieldDescription><![CDATA[huyen]]></fieldDescription>
+	</field>
+	<field name="soNgHuongLoiTuVSTX" class="java.lang.Integer">
+		<fieldDescription><![CDATA[soNgHuongLoiTuVSTX]]></fieldDescription>
+	</field>
+	<field name="tramYteCoNcSachVaNhaTieuHVS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tramYteCoNcSachVaNhaTieuHVS]]></fieldDescription>
+	</field>
+	<field name="truongHocCoNcSachVaNhaTieuHVS" class="java.lang.Integer">
+		<fieldDescription><![CDATA[truongHocCoNcSachVaNhaTieuHVS]]></fieldDescription>
+	</field>
+	<field name="xa" class="java.lang.String">
+		<fieldDescription><![CDATA[xa]]></fieldDescription>
+	</field>
+	<variable name="AVG_NHATIEUHVS" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{coNhaTieuHVS}]]></variableExpression>
+	</variable>
+	<variable name="AVG_NHATIEU" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{coNhaTieu}]]></variableExpression>
+	</variable>
+	<variable name="AVG_TRUONGHOC" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{truongHocCoNcSachVaNhaTieuHVS}]]></variableExpression>
+	</variable>
+	<variable name="AVG_TRAMYTE" class="java.math.BigDecimal" calculation="Average">
+		<variableExpression><![CDATA[$F{tramYteCoNcSachVaNhaTieuHVS}]]></variableExpression>
+	</variable>
+	<variable name="SUM_SONGUOI" class="java.math.BigDecimal" calculation="Sum">
+		<variableExpression><![CDATA[$F{soNgHuongLoiTuVSTX}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="0" y="0" width="30" height="20" uuid="608a2179-bc2c-4015-a951-e8d987121a29"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="170" y="0" width="65" height="20" uuid="eb22868d-5a6d-4bf0-8776-85e5de32b3fd"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{coNhaTieuHVS} != null ) ? $F{coNhaTieuHVS} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="30" y="0" width="70" height="20" uuid="a2470230-7d43-499e-ba4c-86173562a40c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{huyen} != null && $F{huyen}.trim().length() > 0) ? $F{huyen} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="100" y="0" width="70" height="20" uuid="ebb3c751-b9fb-4e3e-a3cd-18f45c9f247e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{xa} != null && $F{xa}.trim().length() > 0) ? $F{xa} : "")]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="295" y="0" width="85" height="20" uuid="a9a60651-46cf-48d8-89ed-c859a258ea78"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{truongHocCoNcSachVaNhaTieuHVS} != null ) ? $F{truongHocCoNcSachVaNhaTieuHVS} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="235" y="0" width="60" height="20" uuid="06f602eb-a586-4e51-94c2-36626365f333"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{coNhaTieu} != null) ? $F{coNhaTieu} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0.0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="380" y="0" width="85" height="20" uuid="4bc1e6bc-e613-41dd-b09d-fda51ce60047"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tramYteCoNcSachVaNhaTieuHVS} != null ) ? $F{tramYteCoNcSachVaNhaTieuHVS} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" pattern="#,##0">
+				<reportElement positionType="Float" stretchType="RelativeToTallestObject" x="465" y="0" width="90" height="20" uuid="d2bea055-dacb-43fa-8e64-54c67a623a4c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{soNgHuongLoiTuVSTX} != null) ? $F{soNgHuongLoiTuVSTX} : 0)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="20" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="170" height="20" uuid="eb146491-29cc-4218-9e34-b12f30d86fbb"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Tổng cộng của tỉnh"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="170" y="0" width="65" height="20" uuid="99fe7954-55d8-4841-84e1-f5e10c7b2fd6"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($V{AVG_NHATIEUHVS} != null ) ? $V{AVG_NHATIEUHVS} : 0)
+]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="235" y="0" width="60" height="20" uuid="fca174dd-280f-482a-8eaf-cafddf437d4f"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($V{AVG_NHATIEU} != null ) ? $V{AVG_NHATIEU} : 0)
+]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="295" y="0" width="85" height="20" uuid="fe78a854-9a56-4a03-a683-73e232697fa3"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($V{AVG_TRUONGHOC} != null ) ? $V{AVG_TRUONGHOC} : 0)
+]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="380" y="0" width="85" height="20" uuid="6e55407b-9440-4f46-bbe7-8e9f57291e51"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($V{AVG_TRAMYTE} != null ) ? $V{AVG_TRAMYTE} : 0)
+]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="465" y="0" width="90" height="20" uuid="e7176eff-bbe0-4577-974b-a2bdbb5ac8f1"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.0"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+					<paragraph leftIndent="3"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($V{SUM_SONGUOI} != null ) ? $V{SUM_SONGUOI} : 0)
+]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

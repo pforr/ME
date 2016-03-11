@@ -1,0 +1,13 @@
+message.source.basename=i18n/messages
+
+#DB properties:
+db.driver=com.mysql.jdbc.Driver
+db.url=jdbc:mysql://123.25.30.83:8306/ns_danhmuc_gem?useUnicode=true&characterEncoding=UTF-8&useFastDateParsing=false
+db.username=gemnuocsach
+db.password=gemns321
+
+#Hibernate Configuration:
+hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+#turn off the hib,use the log4jdbc instead.
+hibernate.show_sql=false
+entitymanager.packages.to.scan=com.mcvn.project.model

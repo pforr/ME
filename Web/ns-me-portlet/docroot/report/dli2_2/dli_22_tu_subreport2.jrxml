@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="dli_22_tu_subreport2" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="ad7637e9-c3a0-45ae-9e47-97973bfad9d1">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="50585c74-11bb-4cd8-b940-a544dae2f027">
+		<queryString>
+			<![CDATA[]]>
+		</queryString>
+		<field name="class" class="java.lang.Class">
+			<fieldDescription><![CDATA[class]]></fieldDescription>
+		</field>
+		<field name="coNhaTieu" class="java.lang.Integer">
+			<fieldDescription><![CDATA[coNhaTieu]]></fieldDescription>
+		</field>
+		<field name="coNhaTieuHVS" class="java.lang.Integer">
+			<fieldDescription><![CDATA[coNhaTieuHVS]]></fieldDescription>
+		</field>
+		<field name="huyen" class="java.lang.String">
+			<fieldDescription><![CDATA[huyen]]></fieldDescription>
+		</field>
+		<field name="soNgHuongLoiTuVSTX" class="java.lang.Integer">
+			<fieldDescription><![CDATA[soNgHuongLoiTuVSTX]]></fieldDescription>
+		</field>
+		<field name="tramYteCoNcSachVaNhaTieuHVS" class="java.lang.Integer">
+			<fieldDescription><![CDATA[tramYteCoNcSachVaNhaTieuHVS]]></fieldDescription>
+		</field>
+		<field name="truongHocCoNcSachVaNhaTieuHVS" class="java.lang.Integer">
+			<fieldDescription><![CDATA[truongHocCoNcSachVaNhaTieuHVS]]></fieldDescription>
+		</field>
+		<field name="xa" class="java.lang.String">
+			<fieldDescription><![CDATA[xa]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DEV\\liferay-plugins-sdk-6.2.0\\portlets\\ns-me-portlet\\docroot\\report\\dli2_2\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="lstSoNgDcTiepCanVSTXTinhDanhSach" class="java.util.List">
+		<fieldDescription><![CDATA[lstSoNgDcTiepCanVSTXTinhDanhSach]]></fieldDescription>
+	</field>
+	<field name="tenTinh" class="java.lang.String">
+		<fieldDescription><![CDATA[tenTinh]]></fieldDescription>
+	</field>
+	<variable name="COUNT_GROUP" class="java.lang.Integer" incrementType="Group" incrementGroup="tenTinh">
+		<variableExpression><![CDATA[($V{tenTinh_COUNT} == 1) ? $V{COUNT_GROUP} + 1 : $V{COUNT_GROUP}]]></variableExpression>
+		<initialValueExpression><![CDATA[1]]></initialValueExpression>
+	</variable>
+	<group name="tenTinh">
+		<groupExpression><![CDATA[$F{tenTinh}]]></groupExpression>
+		<groupHeader>
+			<band height="50">
+				<textField isStretchWithOverflow="true">
+					<reportElement positionType="Float" x="0" y="0" width="555" height="30" uuid="8b243ffc-597e-46a8-a121-9ce33bece209"/>
+					<textElement verticalAlignment="Middle">
+						<font fontName="Times New Roman" size="12" isBold="true"/>
+						<paragraph leftIndent="20"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{COUNT_GROUP}+". "+(($F{tenTinh} != null && $F{tenTinh}.trim().length() > 0) ? $F{tenTinh} : "")]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="100" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="30" height="80" uuid="bede6ec5-23b3-4311-94d9-8a8a18b0b288"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["STT"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="30" y="0" width="60" height="80" uuid="8d268a34-1676-4aaf-a0a4-6562d4b3f3d7"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Huyện"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="90" y="0" width="80" height="80" uuid="02adb4ab-49fd-4809-8faa-ccdf615f8ffa"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Xã"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="170" y="0" width="65" height="80" uuid="9d2d1a33-c7ba-4e3a-9458-389a78c57bb8"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["% HGĐ có Nhà tiêu HVS"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="235" y="0" width="60" height="80" uuid="e98ac911-dfe9-4b60-9764-bd0ffacc7567"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["% HGĐ có nhà tiêu "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="295" y="0" width="85" height="80" uuid="65f4eb5a-de3d-435a-b596-9ee47153997c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["% Trường học có nước sạch và nhà tiêu HVS"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="380" y="0" width="85" height="80" uuid="3e2ce80e-cb15-4ded-a675-65927089ca88"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["% Trạm y tế có nước sạch và nhà tiêu HVS"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="465" y="0" width="90" height="80" uuid="5cb977c1-c4c0-4f5b-a772-af8100dfdc2c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="1.0"/>
+					<leftPen lineWidth="1.0"/>
+					<bottomPen lineWidth="1.0"/>
+					<rightPen lineWidth="1.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="none">
+					<font fontName="Times New Roman" size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Số người hưởng lợi  từ \"Vệ sinh toàn xã\"(Dân số xã)"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="80" width="555" height="20" uuid="e055b8d9-a3d3-4d05-b80a-d30c80de7325"/>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lstSoNgDcTiepCanVSTXTinhDanhSach})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "dli_22_tu_subreport2_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

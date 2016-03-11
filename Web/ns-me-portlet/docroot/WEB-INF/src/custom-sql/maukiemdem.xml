@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.finderMauKiemDem">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				maTinh = ?
+			AND 
+				maHuyen = ?
+			AND
+				maXa = ?
+			AND namxaydung = ?
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.countMauKiemDem">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				maTinh = ?
+			AND 
+				maHuyen = ?
+			AND
+				maXa = ?
+			AND namxaydung = ?
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.finderMauRaSoat">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				maTinh = ?
+			AND 
+				maHuyen = ?
+			AND
+				maXa = ?
+			AND namxaydung < ?
+			AND me_vesinhgiadinh.id NOT IN (
+				SELECT
+					me_thongtinkiemdemhogd.vesinhgiadinhid
+				FROM
+					me_thongtinkiemdemhogd
+				WHERE
+				maTinh = ?
+			AND 
+				maHuyen = ?
+			AND
+				maXa = ?
+			)
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.countMauRaSoat">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_vesinhgiadinh
+			WHERE
+				maTinh = ?
+			AND 
+				maHuyen = ?
+			AND
+				maXa = ?
+			AND namxaydung < ?
+			AND me_vesinhgiadinh.id NOT IN (
+				SELECT
+					me_thongtinkiemdemhogd.vesinhgiadinhid
+				FROM
+					me_thongtinkiemdemhogd
+				WHERE
+				maTinh = ?
+			AND 
+				maHuyen = ?
+			AND
+				maXa = ?
+			)
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.finder">
+		<![CDATA[
+			SELECT * 
+			FROM me_maukiemdem 
+			WHERE
+				id <> 0 
+				AND matinh = ? 
+				AND mahuyen = ? 
+				AND maxa = ? 
+				AND nam = ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.sol.ns.maungaunhien.dao.service.persistence.MAUKIEMDEMFinder.count">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE
+			FROM me_maukiemdem 
+			WHERE
+				id <> 0 
+				AND matinh = ? 
+				AND mahuyen = ? 
+				AND maxa = ? 
+				AND nam = ?
+		]]>
+	</sql>
+</custom-sql>

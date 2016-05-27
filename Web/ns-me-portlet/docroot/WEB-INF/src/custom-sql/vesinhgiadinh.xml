@@ -33,7 +33,7 @@
 			AND LOAI_DU_LIEU 
 			
 			
-			ORDER BY me_thongtinkiemdemhogd.ngaykiemdem desc, me_thongtinkiemdemhogd.tenchuho asc
+			ORDER BY  me_thongtinkiemdemhogd.ngaykiemdem desc, me_vesinhgiadinh.matinh,me_vesinhgiadinh.mahuyen ,me_vesinhgiadinh.maxa,me_vesinhgiadinh.thonxom,me_vesinhgiadinh.tenchuho asc
 		]]>
 	</sql>
 

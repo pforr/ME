@@ -1,0 +1,251 @@
+javax.portlet.title= Water connection
+javax.portlet.short-title= Water connection
+javax.portlet.description= Water connection
+#message
+success.addDauNoiNuoc=Add new water connection successfully
+success.editDauNoiNuoc=Update water connection successfully
+success.xoaDauNoiNuoc=Delete water connection successfully
+success.importDauNoiNuoc Import water connection from file successfully
+error.addDauNoiNuoc=Add new water connection unsuccessfully
+error.editDauNoiNuoc=Update water connection unsuccessfully
+error.xoaDauNoiNuoc=Delete water connection unsuccessfully
+error.importDauNoiNuoc Import water connection from file unsuccessfully
+success.addDauNoiNuocDuplicate= Householder information exists in the system, please check again
+#Search Container
+showing-x-result = Showing {0} } result.
+showing-x-results = Showing {0} } result.
+showing-x-x-of-x-results = Showing {0} - {1}of {2} result.
+showing-x-x = Showing {0} - {1}.
+items-per-page = items per page
+previous = Previous page
+next = Next
+first = First
+last = Last
+page = Page
+of = of
+cp-page=Page
+
+tinh-thanh-pho=Province/city
+nam-bao-cao=Year under review
+phuong-xa=Precinct/ Commune
+thang-thai=Status
+quan-huyen=District/Ward
+tram-cap-nuoc=supply water
+-chon-=--Select--
+-chon-tat-ca-=--Select all--
+them-dau-noi=Add connection
+import-tu-excel=Import from excel
+ten-chu-ho=household name
+thao-tac=Operation
+thon-xom=Village/Hamlet
+kiem-dem=enumeration
+add-dau-noi-nuoc=Add water connection
+edit-dau-noi-nuoc=Update water connection
+xem-dau-noi-nuoc=See water connection
+xoa-dau-noi-nuoc=Delete water connection
+tinh-trang-bao-cao=Year under review
+ngay-dau-noi-tren-hop-dong=contracted date of connection
+gioi-tinh=Gender
+gioi-tinh-0=Male
+gioi-tinh-1=Female
+thong-tin-dau-noi-khong-ton-tai=Connection information does not exist
+ban-co-chac-chan-muon-xoa-dau-noi-nuoc-nay=Are you sure to delete this water connection
+chi-tiet-dau-noi-nuoc=Water connection in detail
+
+bo-qua=Skip
+luu=Save
+thong-tin-danh-gia-dieu-tra=Enumeration review
+thong-tin-co-ban=Basic Information
+ghi-chu=Note
+vi-do=Latitude (North)
+kinh-do=Longitude (East)
+so-nguoi-trong-ho=Number of people in household
+nguon-nuoc=Water Source
+nguon-nuoc-hop-vs=Clean water source
+ngay-dau-noi-thuc-te=Actual date of connection
+ket-qua-danh-gia=Review result
+thanh-phan-ho-ngheo=Household background
+so-sery-dong-ho-nuoc=Water meter serial number
+nguoi-kiem-dem=Enumerator
+danh-gia-lai=Revaluation
+danh-sach-thong-tin-kiem-dem=List of enumeration information
+dau_noi=Connection information
+kiem_dem=Enumeration information
+ket-qua-dieu-tra=investigation result
+lan-kiem-dem=Times of enumeration
+cus-required=Required to import
+cus-required-number Required to import in number format
+cus-required-date Required to import in date-month format
+cap-nhat-danh-gia=Update review
+thanh-phan-ho-gia-dinh=Family background
+im-port-du-lieu=Enter the data
+file-import-dau-noi=Data file (excel)
+dau-noi-nuoc=Water connection
+no-danh-gia-were-found=Water connection not found
+nam=Male
+nu=Female
+tim-kiem=Search
+import-dau-noi-nuoc=Import from Excel
+dc-thon-xom=Address of village
+ngay-danh-gia=Evaluation Date
+nguoi-danh-gia=Supervisor
+
+ke-hoach= Plan
+ten-nguoi-tra-loi=Answerer name
+tinh-trang=Status
+
+#data
+nam-bao-cao-0=No report
+nam-bao-cao-2012=Before 2013
+nam-bao-cao-2013=Till 2013
+nam-bao-cao-2014=2014
+nam-bao-cao-2015=2015
+
+danh-gia-kiem-dem-=
+danh-gia-kiem-dem-0=
+danh-gia-kiem-dem-1=Enumeration completed
+danh-gia-kiem-dem-2=Enumeration not completed
+cap-don-vi-1 = National level
+cap-don-vi-2 = Provincial level
+cap-don-vi-4 = Station level
+cap-don-vi-3 = Ward level
+
+
+nguon-nuoc-=
+nguon-nuoc-0 = Unknown
+nguon-nuoc-1 = Yes
+nguon-nuoc-2 = No
+
+
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-0=Not enumerated
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-1=Completed
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-2=Not completed
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-3=Cancelled
+
+
+
+
+
+
+#2222
+thong-tin-dia-diem-kiem-dem=Information of enumeration location
+thong-tin-ho-gia-dinh-kiem-dem=Information of household enumeration
+thong-tin-dieu-tra-dau-noi-nuoc=Information of water connection investigation
+ly-do-khong-hoan-thanh=Reason for no completion
+trang-thai-dieu-tra=Investigation status
+chi-so-dong-ho=Clock Index 
+so-se-ry-dong-ho-nuoc=Water meter Serial Number
+so-lan-mat-nuoc=Number of times of cutting water
+so-gio-trung-binh-mot-lan-mat-nuoc=Average hours per one time of cutting water
+co-be-chua-nuoc-khong=Water tank available or not
+anh-be-chua-nuoc=Image of water tank
+anh-be-dong-ho=Image of clock
+tinh-trang-be-chua=Tank status
+vi-nuoc=Water taste
+khac=Other
+mau-nuoc=Water color
+mui-nuoc=Water smell
+nguon-nuoc-truoc-day=Previous water source
+nguon-nuoc-hien-tai=Current water source
+thanh-phan-ho-gia-dinh-0=
+thanh-phan-ho-gia-dinh-1=Poor
+thanh-phan-ho-gia-dinh-2=Near poor
+thanh-phan-ho-gia-dinh-3=not poor
+da-duoc-dau-noi-chua=Already connected or not
+anh-dau-noi-nuoc=Image of water connection
+ten-chu-ho-hien-tai=Current household name
+ten-chu-ho-dung-voi-ds-kiem-dem=Household name right with the enumeration list
+ten-chu-ho-dung-voi-ds-kiem-dem-=
+ten-chu-ho-dung-voi-ds-kiem-dem-0=
+ten-chu-ho-dung-voi-ds-kiem-dem-1=Yes
+ten-chu-ho-dung-voi-ds-kiem-dem-2=No
+ly-do-khong-dung=Reason for wrong
+gioi-tinh-nguoi-tra-loi=Answerer gender
+dan-toc-nguoi-tra-loi=Answerer Ethnic
+ho-ten-nguoi-tra-loi=Answerer full name
+la-chu-ho-khong=Householder nor not
+la-chu-ho-khong-1=Yes
+la-chu-ho-khong-2=No
+gioi-tinh-chu-ho=Householder gender
+huy=Cancel the same record
+tinh-trang-be-chua-0=
+tinh-trang-be-chua-1=No damage for the outside part, tank preserved usually
+tinh-trang-be-chua-2=Few damage  for the outside part , tank not preserved usually
+tinh-trang-be-chua-3=Much damage , no preservation and hygien
+ti-le-ho-gia-dinh-co-nha-tieu=Ratio of households with latrines
+
+
+
+
+
+
+
+
+
+##data
+trang-thai-ke-hoach-0=Under planning
+trang-thai-ke-hoach-1=Ongoing enumeration
+trang-thai-ke-hoach-2=End enumeration
+
+da-ket-thuc-dieu-tra-=
+da-ket-thuc-dieu-tra-0= No end
+da-ket-thuc-dieu-tra-1=Fully completed
+da-ket-thuc-dieu-tra-2=Partly completed
+da-ket-thuc-dieu-tra-label-2=ongoing enumeration
+
+ngay-kiem-dem=Date of enumeration
+dau-noi-by-tinh-huyen-xa=Commune Catergorization
+dau-noi-by-dau-noi=connection catergorization
+
+tinh-trang-dau-noi-0 = No enumeration plan
+tinh-trang-dau-noi-1 = planned
+tinh-trang-dau-noi-2 = enumeration completed
+tinh-trang-dau-noi-3 = enumeration not completed
+tinh-trang-dau-noi-4 = cancelled
+tinh-trang-dau-noi-8= cancelled
+voi-nuoc-co-chay-khong=water flowing or not
+voi-nuoc-co-chay-khong-0=
+voi-nuoc-co-chay-khong-1=flowing
+voi-nuoc-co-chay-khong-2=not flowing
+da-duoc-dau-noi-chua-0=
+da-duoc-dau-noi-chua-1=Yes
+da-duoc-dau-noi-chua-2=No
+la-chu-ho-khong-0=
+
+bi-mat-nuoc=cutting water or not
+bi-mat-nuoc-0=
+bi-mat-nuoc-1=No
+bi-mat-nuoc-2=Yes
+nguon-nuoc-hien-tai-0=
+nguon-nuoc-hien-tai-1=pure
+nguon-nuoc-hien-tai-2=impure
+ngay-nhap-lieu=Date of import
+nguoi-tao=Creater
+tu-khoa=Key word
+nguon-nuoc-hien-tai-trong-0=
+nguon-nuoc-hien-tai-trong-1=pure
+nguon-nuoc-hien-tai-trong-2=impure
+co-be-chua-nuoc-khong-=
+co-be-chua-nuoc-khong-0=
+co-be-chua-nuoc-khong-1=Yes
+co-be-chua-nuoc-khong-2=No
+
+chua-co-ke-hoach = No plan
+cho-khao-sat = Wait for survey
+chua-hoan-thanh = Not completed
+da-hoan-thanh = completed
+da-huy = cancelled
+kiemdemvien = enumerator
+giamsatvien = supervisor
+kiem-dem-dat = enumeration completed
+kiem-dem-khong-dat = enumeration not completed
+ket-qua-kiem-dem = enumeration result
+maHuyen = County/District
+xa = Precinct/Commune
+no-dau-noi-nuoc = water connection not found
+trang-thai-kd=enumeration status
+trang-thai-kiem-dem--1=No plan
+trang-thai-kiem-dem-0=Wait for survey
+trang-thai-kiem-dem-1=completed
+trang-thai-kiem-dem-2=Not completed
+trang-thai-kiem-dem-3=cancelled

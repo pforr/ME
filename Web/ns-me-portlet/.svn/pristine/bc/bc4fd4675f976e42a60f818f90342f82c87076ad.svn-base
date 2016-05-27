@@ -1,0 +1,36 @@
+javax.portlet.title= Navigation Clean Water
+javax.portlet.short-title= Menu
+javax.portlet.description= Menu
+
+nc-sach-tram-cap-nuoc = Water supply facility
+nc-sach-dau-noi-nuoc=water connection
+nc-sach-kiem-dem-dau-noi-nuoc=water connection enumeration
+nc-sach-quan-ly-danh-gia-ben-vung=year-end evaluation
+nc-sach-ke-hoach-dau-nam=year-early plan
+
+nguoi-dung = user
+kiem-dem-vien = enumerator
+danh-muc = Menu
+ve-sinh-ho-gia-dinh = household sanitation
+ve-sinh-cong-trinh-cong-cong = public facility
+kiem-dem-ve-sinh = sanitation enumeration
+ve-sinh-toan-xa = year-end evaluation
+ke-hoach-dau-nam = year-early plan
+lua-chon-mau-ngau-nhien = Select random sample
+
+bao-cao-dli-1-1 = DLI report 1.1
+bao-cao-dli-1-2 = DLI report 1.2
+bao-cao-dli-2-1 = DLI report 2.1
+bao-cao-dli-2-2 = DLI report 2.2
+bao-cao-dli-3 = DLI report 3.1 & 3.2
+bao-cao-tong-hop = Overall report
+bao-cao-dli-tong-hop-ve-gioi=Overall report of gender
+bao-cao-dli-thuc-hien-cap-nuoc-tap-trung=report of progress of concentrated water supply
+bao-cao-dli-ket-qua-xet-nghiem-nuoc=report of water-test result
+bao-cao-dli-hop-nhat-tinh=report of united province
+
+nc-sach-thong-ke-dau-noi-nuoc = statistics of water connection
+tk-ve-sinh-nha-tieu-hvs = statistic of hygienic latrine
+tk-nguoi-tiep-can-nuoc-sach = statistics of people approching clean water
+tk-so-nguoi-tiep-can = statistics of people approching commune-wide sanitation
+

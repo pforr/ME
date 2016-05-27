@@ -1,0 +1,284 @@
+javax.portlet.title= Ve Sinh Ho Gia Dinh
+javax.portlet.short-title= V\u1ec7 Sinh H\u1ed9 Gia \u0110\u00ecnh
+javax.portlet.description= V\u1ec7 Sinh H\u1ed9 Gia \u0110\u00ecnh
+#message
+success.addHoGiaDinh=Th\u00eam m\u1edbi v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh th\u00e0nh c\u00f4ng
+success.editHoGiaDinh=C\u1eadp nh\u1eadt v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh th\u00e0nh c\u00f4ng
+success.xoaHoGiaDinh=Xo\u00e1 v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh th\u00e0nh c\u00f4ng
+success.importHoGiaDinh Nh\u1eadp v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh t\u1eeb t\u1ec7p tin th\u00e0nh c\u00f4ng
+error.addHoGiaDinh=Th\u00eam m\u1edbi v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh th\u1ea5t b\u1ea1i
+error.editHoGiaDinh=C\u1eadp nh\u1eadt v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh th\u1ea5t b\u1ea1i
+error.xoaHoGiaDinh=Xo\u00e1 v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh th\u1ea5t b\u1ea1i
+error.importHoGiaDinh Nh\u1eadp v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh t\u1eeb t\u1ec7p tin th\u1ea5t b\u1ea1i
+
+#Search Container
+showing-x-result = Hi\u1ec3n th\u1ecb {0} } k\u1ebft qu\u1ea3.
+showing-x-results = Hi\u1ec3n th\u1ecb {0} } k\u1ebft qu\u1ea3.
+showing-x-x-of-x-results = Hi\u1ec3n th\u1ecb {0} - {1} c\u1ee7a {2} k\u1ebft qu\u1ea3.
+showing-x-x = Hi\u1ec3n th\u1ecb {0} - {1}.
+items-per-page = S\u1ed1 h\u00e0ng m\u1ed7i trang
+previous = Trang tr\u01b0\u1edbc
+next = Ti\u1ebfp theo
+first = \u0110\u1ea7u ti\u00ean
+last = Cu\u1ed1i c\u00f9ng
+page = Trang
+of = c\u1ee7a
+cp-page=Trang
+
+-chon-=--Ch\u1ecdn--
+-chon-tat-ca-=--Ch\u1ecdn t\u1ea5t c\u1ea3--
+tinh-thanh-pho=T\u1ec9nh/TP
+quan-huyen=Qu\u1eadn/Huy\u1ec7n
+phuong-xa=Ph\u01b0\u1eddng/ X\u00e3
+thang-thai=Tr\u1ea1ng th\u00e1i
+nam-bao-cao=N\u0103m b\u00e1o c\u00e1o
+tim-kiem=T\u00ecm ki\u1ebfm
+ 
+import-tu-excel=Nh\u1eadp t\u1eeb excel\n
+thon-xom=Th\u00f4n/X\u00f3m
+ten-chu-ho=T\u00ean ch\u1ee7 h\u1ed9
+thao-tac=Thao t\u00e1c
+them-vs-ho-gia-dinh= Th\u00eam h\u1ed9 gia \u0111\u00ecnh
+xem-vs-ho-gia-dinh=Xem h\u1ed9 gia \u0111\u00ecnh
+edit-vs-ho-gia-dinh=C\u1eadp nh\u1eadt h\u1ed9 gia \u0111\u00ecnh
+xoa-vs-ho-gia-dinh=Xo\u00e1 h\u1ed9 gia \u0111\u00ecnh
+add-vs-ho-gia-dinh=Th\u00eam m\u1edbi h\u1ed9 gia \u0111\u00ecnh
+dc-thon-xom=\u0110\u1ecba ch\u1ec9 th\u00f4n x\u00f3m
+so-nguoi-trong-ho=S\u1ed1 ng\u01b0\u1eddi trong h\u1ed9
+hien-trang-truoc-khi-xay=Hi\u1ec7n tr\u1ea1ng tr\u01b0\u1edbc khi x\u00e2y
+thang-xay-dung=Th\u00e1ng x\u00e2y d\u1ef1ng
+nam-xay-dung=N\u0103m x\u00e2y d\u1ef1ng
+gioi-tinh=Gi\u1edbi t\u00ednh
+nam=Nam
+nu=N\u1eef
+thanh-phan-ho-gia-dinh=Th\u00e0nh ph\u1ea7n h\u1ed9 gia \u0111\u00ecnh
+loai-nha-tieu=Lo\u1ea1i nh\u00e0 ti\u00eau
+tinh-trang-bao-cao=N\u0103m b\u00e1o c\u00e1o
+nam-xay-dung-0=--Ch\u1ecdn--
+ghi-chu=Ghi ch\u00fa
+luu=L\u01b0u
+cus-required=b\u1eaft bu\u1ed9c nh\u1eadp
+vs-ho-gia-dinh=Nh\u00e0 v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh
+ho-gia-dinh=Th\u00f4ng tin h\u1ed9 gia \u0111\u00ecnh
+kiem-dem=Th\u00f4ng tin ki\u1ec3m \u0111\u1ebfm
+kinh-do=Kinh \u0111\u1ed9 ( \u0111\u00f4ng)
+vi-do=V\u0129 \u0111\u1ed9 ( B\u1eafc)
+thong-tin-danh-gia-dieu-tra=\u0110\u00e1nh gi\u00e1 ki\u1ec3m \u0111\u1ebfm
+nha-tieu-hop-vs=Nh\u00e0 ti\u00eau h\u1ee3p v\u1ec7 sinh
+ngay-kiem-dem=Ng\u00e0y ki\u1ec3m \u0111\u1ebfm
+nguoi-kiem-dem=Ng\u01b0\u1eddi ki\u1ec3m \u0111\u1ebfm
+ket-qua-danh-gia=K\u1ebft qu\u1ea3 \u0111\u00e1nh gi\u00e1
+ngay-danh-gia=Ng\u00e0y \u0111\u00e1nh gi\u00e1
+nguoi-danh-gia=Ng\u01b0\u1eddi \u0111\u00e1nh gi\u00e1
+danh-gia-lai=\u0110\u00e1nh gi\u00e1 l\u1ea1i
+nam-hoan-thanh=N\u0103m ho\u00e0n th\u00e0nh
+danh-gia-lai-nha-vs-ho-gd=\u0110\u00e1nh gi\u00e1 l\u1ea1i nh\u00e0 v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh
+cap-nhat-danh-gia=C\u1eadp nh\u1eadt \u0111\u00e1nh gi\u00e1
+loai-import-ho-gia-dinh=T\u00e0i li\u1ec7u Excel
+file-import-ho-gia-dinh=T\u1ec7p d\u1eef li\u1ec7u (excel)
+im-port-du-lieu=Nh\u1eadp d\u1eef li\u1ec7u
+nam-bao-cao-xay-moi=X\u00e2y m\u1edbi
+nam-bao-cao-vstx=VSTX
+
+#data
+tinh-trang-ve-sinh--1=Ch\u1edd k\u1ebf ho\u1ea1ch
+tinh-trang-ve-sinh-0=Ch\u1edd kh\u1ea3o s\u00e1t
+tinh-trang-ve-sinh-1=\u0110\u00e3 ho\u00e0n th\u00e0nh
+tinh-trang-ve-sinh-2=Ch\u01b0a ho\u00e0n th\u00e0nh
+tinh-trang-ve-sinh-3=\u0110\u00e3 h\u1ee7y
+
+nam-bao-cao-0=Ch\u01b0a b\u00e1o c\u00e1o
+nam-bao-cao-2013=\u0110\u1ebfn 2013
+nam-bao-cao-2014=2014
+nam-bao-cao-2015=2015
+
+co-nha-tieu-hvs-1=Kh\u00f4ng c\u00f3 nh\u00e0 ti\u00eau
+co-nha-tieu-hvs-2=C\u00f3 nh\u01b0ng kh\u00f4ng h\u1ee3p v\u1ec7 sinh
+co-nha-tieu-hvs-3=C\u00f3 nh\u00e0 ti\u00eau h\u1ee3p v\u1ec7 sinh
+
+thang-xay-dung-0=--Ch\u1ecdn--
+thang-xay-dung-1=Th\u00e1ng 1
+thang-xay-dung-2=Th\u00e1ng 2
+thang-xay-dung-3=Th\u00e1ng 3
+thang-xay-dung-4=Th\u00e1ng 4
+thang-xay-dung-5=Th\u00e1ng 5
+thang-xay-dung-6=Th\u00e1ng 6
+thang-xay-dung-7=Th\u00e1ng 7
+thang-xay-dung-8=Th\u00e1ng 8
+thang-xay-dung-9=Th\u00e1ng 9
+thang-xay-dung-10=Th\u00e1ng 10
+thang-xay-dung-11=Th\u00e1ng 11
+thang-xay-dung-12=Th\u00e1ng 12
+
+thanh-phan-ho-gia-dinh-1=Ngh\u00e8o
+thanh-phan-ho-gia-dinh-2=C\u1eadn ngh\u00e8o
+thanh-phan-ho-gia-dinh-3=Kh\u00f4ng
+nha-tieu-hop-ve-sinh-0=
+nha-tieu-hop-ve-sinh-1=C\u00f3
+nha-tieu-hop-ve-sinh-2=Kh\u00f4ng
+type-import-1=V\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh
+type-import-2=V\u1ec7 sinh to\u00e0n x\u00e3
+
+
+
+
+#ext
+ke-hoach=K\u1ebf ho\u1ea1ch
+ten-nguoi-tra-loi=H\u1ecd t\u00ean ng\u01b0\u1eddi tr\u1ea3 l\u1eddi
+tinh-trang=T\u00ecnh tr\u1ea1ng
+thong-tin-dia-diem-kiem-dem=Th\u00f4ng tin \u0111\u1ecba \u0111i\u1ec3m ki\u1ec3m \u0111\u1ebfm
+thong-tin-ho-gia-dinh-kiem-dem=Th\u00f4ng tin h\u1ed9 gia \u0111\u00ecnh ki\u1ec3m \u0111\u1ebfm
+thong-tin-dieu-tra-vs-ho-gia-dinh=Th\u00f4ng tin \u0111i\u1ec1u tra nh\u00e0 v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh
+ket-qua-dieu-tra=k\u1ebft qu\u1ea3 \u0111i\u1ec1u tra
+ho-ten-nguoi-tra-loi=H\u1ecd t\u00ean ng\u01b0\u1eddi tr\u1ea3 l\u1eddi
+gioi-tinh-nguoi-tra-loi=Gi\u1edbi t\u00ednh ng\u01b0\u1eddi tr\u1ea3 l\u1eddi
+ten-chu-ho-dung-voi-ds-kiem-dem=T\u00ean ch\u1ee7 h\u1ed9 \u0111\u00fang v\u1edbi DS ki\u1ec3m \u0111\u1ebfm
+
+ten-chu-ho-hien-tai=T\u00ean ch\u1ee7 h\u1ed9 hi\u1ec7n t\u1ea1i
+gioi-tinh-chu-ho=Gi\u1edbi t\u00ednh ch\u1ee7 h\u1ed9
+la-chu-ho-khong=L\u00e0 ch\u1ee7 h\u1ed9 kh\u00f4ng
+dan-toc-nguoi-tra-loi=D\u00e2n t\u1ed9c ng\u01b0\u1eddi tr\u1ea3 l\u1eddi
+ly-do-khong-dung=L\u00fd do kh\u00f4ng \u0111\u00fang
+thoi-gian-hoan-thanh=Th\u1eddi gian ho\u00e0n th\u00e0nh
+co-cong-trinh-ve-sinh-khong=C\u00f3 c\u00f4ng tr\u00ecnh v\u1ec7 sinh kh\u00f4ng
+co-phai-cong-trinh-cai-tao=C\u00f3 ph\u1ea3i c\u00f4ng tr\u00ecnh c\u1ea3i t\u1ea1o
+cong-trinh-co-sach-se=C\u00f4ng tr\u00ecnh c\u00f3 s\u1ea1ch s\u1ebd
+mui-nuoc-tieu-va-phan=M\u00f9i n\u01b0\u1edbc ti\u1ec3u v\u00e0 ph\u00e2n
+cong-trinh-co-dam-bao-che=C\u00f4ng tr\u00ecnh c\u00f3 \u0111\u1ea3m b\u1ea3o che
+nap-be-xi-be-phan-con=B\u1ec3 ch\u1ee9a ph\u00e2n/B\u1ec3 ph\u1ed1t c\u00f2n t\u1ed1t
+nuoc-hoac-phan-bun-tran-ra-ngoai=N\u01b0\u1edbc ho\u1eb7c ph\u1ea7n b\u00f9n tr\u00e0n ra ngo\u00e0i
+nguon-nuoc-chinh-cach-be-chua-bao-xa=Ngu\u1ed3n n\u01b0\u1edbc c\u00e1ch b\u1ec3 ch\u1ee9a
+kinh-phi-xay-dung=Kinh ph\u00ed x\u00e2y d\u1ef1ng
+nguon-nuoc=Ngu\u1ed3n n\u01b0\u1edbc
+loai-cong-trinh-cai-tao=Lo\u1ea1i c\u00f4ng tr\u00ecnh c\u1ea3i t\u1ea1o
+tuong-va-san-co-de-lam-ve-sinh=T\u01b0\u1eddng v\u00e0 s\u00e0n c\u00f3 d\u1ec5 l\u00e0m v\u1ec7 sinh
+phia-tren-co-du-kin-dao=Ph\u00ed tr\u00ean c\u00f3 \u0111\u1ee7 k\u00edn \u0111\u00e1o
+san-bi-xi-co-cao-hon-mat-dat=S\u00e0n b\u1ec7 x\u00ed c\u00f3 cao h\u01a1n m\u1eb7t \u0111\u1ea5t
+lo-va-cua-chua-phan-co-duoc-bit-kin=L\u1ed7 v\u00e0 c\u1eeda ch\u1ee9a ph\u00e2n c\u00f3 \u0111\u01b0\u1ee3c b\u1ecbt k\u00edn
+nuoc-thai-tu-be-chay-di-dau=N\u01b0\u1edbc th\u1ea3i t\u1eeb b\u1ec3 ch\u1ea3y \u0111i \u0111\u00e2u
+nha-tieu-co-bi-ngap-lut-khi-mua-lon=Nh\u00e0 ti\u00eau c\u00f3 b\u1ecb ng\u1eadp l\u1ee5t khi m\u01b0a l\u1edbn
+
+trang-thai-dieu-tra=Tr\u1ea1ng th\u00e1i \u0111i\u1ec1u tra
+ly-do-khong-hoan-thanh=L\u00fd do kh\u00f4ng ho\u00e0n th\u00e0nh
+import-dau-noi-nuoc=Nh\u1eadp v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh
+
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-0=Ch\u01b0a k\u1ebft th\u00fac
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-1=\u0110\u00e3 ho\u00e0n th\u00e0nh \u0111\u1ea7y \u0111\u1ee7
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-2=\u0110\u00e3 ho\u00e0n th\u00e0nh m\u1ed9t ph\u1ea7n
+ten-chu-ho-dung-voi-ds-kiem-dem-=
+ten-chu-ho-dung-voi-ds-kiem-dem-0=
+ten-chu-ho-dung-voi-ds-kiem-dem-1=C\u00f3
+ten-chu-ho-dung-voi-ds-kiem-dem-2=Kh\u00f4ng
+gioi-tinh-0=Nam
+gioi-tinh-1=N\u1eef
+la-chu-ho-khong-0=
+la-chu-ho-khong-1=C\u00f3
+la-chu-ho-khong-2=Kh\u00f4ng
+thanh-phan-ho-gia-dinh-0=
+loai-cong-trinh-cai-tao-=
+loai-cong-trinh-cai-tao-0=
+loai-cong-trinh-cai-tao-1=\u0110\u00fang
+loai-cong-trinh-cai-tao-2=Kh\u00f4ng
+
+
+tuong-va-san-co-de-lam-ve-sinh-=
+tuong-va-san-co-de-lam-ve-sinh-0=
+tuong-va-san-co-de-lam-ve-sinh-1=C\u00f3
+tuong-va-san-co-de-lam-ve-sinh-2=Kh\u00f4ng
+
+phia-tren-co-du-kin-dao-=
+phia-tren-co-du-kin-dao-0=
+phia-tren-co-du-kin-dao-1=C\u00f3
+phia-tren-co-du-kin-dao-2=Kh\u00f4ng
+
+san-bi-xi-co-cao-hon-mat-dat-=
+san-bi-xi-co-cao-hon-mat-dat-0=
+san-bi-xi-co-cao-hon-mat-dat-1=C\u00f3
+san-bi-xi-co-cao-hon-mat-dat-2=Kh\u00f4ng
+
+lo-va-cua-chua-phan-co-duoc-bit-kin-=
+lo-va-cua-chua-phan-co-duoc-bit-kin-0=
+lo-va-cua-chua-phan-co-duoc-bit-kin-1=C\u00f3
+lo-va-cua-chua-phan-co-duoc-bit-kin-2=Kh\u00f4ng
+
+nuoc-thai-tu-be-chay-di-dau-=
+nuoc-thai-tu-be-chay-di-dau-0=
+nuoc-thai-tu-be-chay-di-dau-1=V\u00e0o h\u1ed1 th\u1ea5m ho\u1eb7c r\u00e3nh k\u00edn
+nuoc-thai-tu-be-chay-di-dau-2=V\u00e0o c\u1ed1ng ho\u1eb7c r\u00e3nh tho\u00e1t n\u01b0\u1edbc
+nuoc-thai-tu-be-chay-di-dau-3=V\u00e0o n\u01a1i gi\u1eef n\u01b0\u1edbc ho\u1eb7c h\u1ed1 h\u1edf
+nuoc-thai-tu-be-chay-di-dau-4=Kh\u00f4ng quan s\u00e1t \u0111\u01b0\u1ee3c
+
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-=
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-0=
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-1=C\u00f3
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-2=Kh\u00f4ng
+
+co-cong-trinh-ve-sinh-khong-=
+co-cong-trinh-ve-sinh-khong-0=
+co-cong-trinh-ve-sinh-khong-1=C\u00f3
+co-cong-trinh-ve-sinh-khong-2=Kh\u00f4ng
+
+co-phai-cong-trinh-cai-tao-=
+co-phai-cong-trinh-cai-tao-0=
+co-phai-cong-trinh-cai-tao-1=\u0110\u00fang
+co-phai-cong-trinh-cai-tao-2=Kh\u00f4ng
+
+cong-trinh-co-sach-se-=
+cong-trinh-co-sach-se-0=
+cong-trinh-co-sach-se-1=C\u00f3
+cong-trinh-co-sach-se-2=Kh\u00f4ng
+
+mui-nuoc-tieu-va-phan-=
+mui-nuoc-tieu-va-phan-0=
+mui-nuoc-tieu-va-phan-1=\u00cdt m\u00f9i
+mui-nuoc-tieu-va-phan-2=N\u1eb7ng m\u00f9i
+
+cong-trinh-co-dam-bao-che-=
+cong-trinh-co-dam-bao-che-0=
+cong-trinh-co-dam-bao-che-1=C\u00f3
+cong-trinh-co-dam-bao-che-2=Kh\u00f4ng
+
+nap-be-xi-be-phan-con-=
+nap-be-xi-be-phan-con-0=
+nap-be-xi-be-phan-con-1=C\u00f3
+nap-be-xi-be-phan-con-2=Kh\u00f4ng
+
+
+nuoc-hoac-phan-bun-tran-ra-ngoai-=
+nuoc-hoac-phan-bun-tran-ra-ngoai-0=
+nuoc-hoac-phan-bun-tran-ra-ngoai-1=C\u00f3
+nuoc-hoac-phan-bun-tran-ra-ngoai-2=Kh\u00f4ng
+
+nguon-nuoc-chinh-cach-be-chua-bao-xa-=
+nguon-nuoc-chinh-cach-be-chua-bao-xa-0=
+nguon-nuoc-chinh-cach-be-chua-bao-xa-1=>\=10m
+nguon-nuoc-chinh-cach-be-chua-bao-xa-2=<10m
+
+nam-bao-cao-loai=Lo\u1ea1i
+ban-co-chac-chan-muon-xoa-vs-ho-gia-dinh-nay=B\u1ea1n c\u00f3 ch\u1eafc ch\u1eafn mu\u1ed1n xo\u00e1 v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh n\u00e0y
+no-danh-gia-were-found=Kh\u00f4ng t\u00ecm th\u1ea5y v\u1ec7 sinh h\u1ed9 gia \u0111\u00ecnh
+nguoi-tao=Ng\u01b0\u1eddi t\u1ea1o
+tu-khoa=T\u1eeb kho\u00e1
+ngay-nhap-lieu=Ng\u00e0y nh\u1eadp li\u00eau
+
+danh-gia-kiem-dem-0=Kh\u00f4ng c\u00f3 k\u1ebft qu\u1ea3
+danh-gia-kiem-dem-1=C\u00f3 nh\u00e0 ti\u00eau HVS x\u00e2y m\u1edbi
+danh-gia-kiem-dem-2=C\u00f3 nh\u00e0 ti\u00eau HVS
+danh-gia-kiem-dem-3=C\u00f3 nh\u00e0 ti\u00eau kh\u00f4ng HVS
+danh-gia-kiem-dem-4=Kh\u00f4ng c\u00f3 nh\u00e0 ti\u00eau
+
+
+
+ket-qua=K\u1ebft qu\u1ea3
+kiem-dem-vien=Ki\u1ec3m \u0111\u1ebfm vi\u00ean
+giam-sat-vien=Gi\u00e1m s\u00e1t vi\u00ean
+ngay-kiem-dem=Ng\u00e0y ki\u1ec3m \u0111\u1ebfm
+ngay-tao=Ng\u00e0y t\u1ea1o
+
+
+loai-du-lieu-ho-gd=Hộ gia đình
+loai-du-lieu-diem-kd=Điểm kiểm đếm
+loai-du-lieu-diem-kd-moi=Điểm kiểm đếm xây mới
+loai-du-lieu-diem-kd-nn=Điểm kiểm đếm ngẫu nhiên
+
+tinh-trang-ve-sinh-8=\u0110\u00E3 h\u1EE7y

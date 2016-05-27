@@ -919,6 +919,9 @@
 			<basic name="nguoiDuyet">
 				<column name="NGUOIDUYET" />
 			</basic>
+			<basic name="donViBaoCao">
+				<column name="DONVIBAOCAO" />
+			</basic>
 			<basic name="soBaoCao">
 				<column name="SOBAOCAO" />
 			</basic>
@@ -935,18 +938,30 @@
 			<basic name="luuTruPDF2Id">
 				<column name="LUUTRUPDF_2" />
 			</basic>
+			<basic name="luuTruPDF3Id">
+				<column name="LUUTRUPDF_3" />
+			</basic>
 			<basic name="luuTruCSV1Id">
 				<column name="LUUTRUCSV_1" />
 			</basic>
 			<basic name="luuTruCSV2Id">
 				<column name="LUUTRUCSV_2" />
 			</basic>
-			<basic name="keHoachNam" />
+			<basic name="luuTruCSV3Id">
+				<column name="LUUTRUCSV_3" />
+			</basic>
+			<basic name="keHoachNam">
+				<column name="KEHOACHNAM" />
+			</basic>
 			<basic name="ngayPheDuyet">
+				<column name="NGAYPHEDUYET" />
 				<temporal>TIMESTAMP</temporal>
 			</basic>
-			<basic name="baoCaoChuongTrinh" />
+			<basic name="baoCaoChuongTrinh">
+				<column name="BAOCAOCHUONGTRINH" />
+			</basic>
 			<basic name="ngayDang">
+				<column name="NGAYDANG" />
 				<temporal>TIMESTAMP</temporal>
 			</basic>
 			<transient name="modelAttributes" />

@@ -1,0 +1,303 @@
+package vn.dtt.sol.ns.portlet;
+
+
+
+import java.io.File;
+import java.io.IOException;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.PortletContext;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.CategoryDataset;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+
+import vn.dtt.sol.ns.baocaodli.business.BaoCaoDLITongHopBusiness;
+import vn.dtt.sol.ns.business.KeHoachNuocSachBusiness;
+import vn.dtt.sol.ns.business.KeHoachVeSinhBusiness;
+import vn.dtt.sol.ns.daunoinuoc.terms.DauNoiNuocTerms;
+import vn.dtt.sol.ns.util.format.ConvertUtil;
+
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.liferay.util.portlet.PortletProps;
+
+public class DashboardPortlet extends MVCPortlet {
+	
+ public void processAction(ActionRequest request,
+  ActionResponse response) throws IOException, PortletException {
+  // create dataset Object
+  //DefaultPieDataset dataset = createPieDataSet(request, response);
+  //DefaultPieDataset dataset1 = createPieDataSet(request, response);
+  //DefaultPieDataset dataset2 = createRingDataSet(request, response);
+  //create chart
+ // generateChart(request, response, dataset);
+  //generateChart(request, response, dataset1);
+  response.setRenderParameter("jspPage", "/html/portlet/dashboard/view.jsp");
+
+ }
+ 
+ 
+ 
+ 
+ 
+ @Override
+public void doView(RenderRequest renderRequest, RenderResponse renderResponse)
+		throws IOException, PortletException {
+/*	System.out.println("doView");
+	   PortletContext context = renderRequest.getPortletSession().getPortletContext();
+	   String path = context.getRealPath("/images");
+
+	   
+	   
+	   
+	   
+	   
+	   final String fiat = "FIAT";
+	   final String audi = "AUDI";
+	   final String ford = "FORD";
+	   final String speed = "Speed";
+	   final String millage = "Millage";
+	   final String userrating = "User Rating";
+	   final String safety = "safety";
+
+	   final DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
+
+	   dataset.addValue( 1.0 , fiat , speed );
+	   dataset.addValue( 3.0 , fiat , userrating );
+	   dataset.addValue( 5.0 , fiat , millage );
+	   dataset.addValue( 5.0 , fiat , safety );
+
+	   dataset.addValue( 5.0 , audi , speed );
+	   dataset.addValue( 6.0 , audi , userrating );
+	   dataset.addValue( 10.0 , audi , millage );
+	   dataset.addValue( 4.0 , audi , safety );
+
+	   dataset.addValue( 4.0 , ford , speed );
+	   dataset.addValue( 2.0 , ford , userrating );
+	   dataset.addValue( 3.0 , ford , millage );
+	   dataset.addValue( 6.0 , ford , safety );
+
+	   JFreeChart barChart = ChartFactory.createBarChart( "CAR USAGE STATIStICS",   "Category", "Score", dataset,PlotOrientation.VERTICAL,true, true, false);
+	      
+	   int width = 640;  Width of the image 
+	   int height = 480;  Height of the image  
+	 
+	   
+	   
+	   //create a JPG image of saleschart
+	   ChartUtilities.saveChartAsJPEG(new File(path + "/salespiechart.jpg"), barChart, 300, 300);	*/
+	super.doView(renderRequest, renderResponse);
+}
+
+
+
+
+
+@Override
+public void render(RenderRequest request, RenderResponse response)
+		throws PortletException, IOException {
+	  //get running server path
+	   PortletContext context = request.getPortletSession().getPortletContext();
+	   String path = context.getRealPath("/images");
+	int namValueInt = ParamUtil.getInteger(request, "namBaoCao");
+	int namToiThieu = namValueInt;
+	System.out.println("Render "+ namValueInt);
+	int SoDauNoiKHValue = 0;
+	int SoDauNoiKQDDValue = 0;
+
+	int SoNhaTieuHGDXayMoiKHValue = 0;
+	int SoNhaTieuHGDXayMoiKQDDValue = 0;
+
+	int SoNgHgLoiTuCapNcBenVungKHValue = 0;
+	int SoNgHgLoiTuCapNcBenVungKQDDValue = 0;
+	
+	int SoNgHgLoiTuVSTXKHValue = 0;
+	int SoNgHgLoiTuVSTXKQDDValue = 0;
+	
+	String SoKHCuaTinhDcPheDuyetKHValue = "";
+	String SoKHCuaTinhDcPheDuyetKQDDValue = "";
+	
+	String SoBCCTDcCongBoKHValue = "";
+	String SoBCCTDcCongBoKQDDValue = "";
+	String DANGKYVSTX = "1"; // 1 la co dang ky vstx
+	
+	//1 1.1
+	SoDauNoiKHValue =BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	SoDauNoiKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	//2 1.2
+	SoNhaTieuHGDXayMoiKHValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+	SoNhaTieuHGDXayMoiKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+	//3 2.1
+	SoNgHgLoiTuCapNcBenVungKHValue =  KeHoachNuocSachBusiness.sumSoNguoiHuongLoiCapNcBenVungBaoCaoHopNhat(null, namValueInt, namToiThieu);;;
+	SoNgHgLoiTuCapNcBenVungKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0);;
+	//4 2.2
+	SoNgHgLoiTuVSTXKHValue =
+	KeHoachVeSinhBusiness.sumSoDanHuongLoiBaoCaoHopNhat(null, namValueInt, namToiThieu, DANGKYVSTX);
+	SoNgHgLoiTuVSTXKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0);;
+	//5 3.1
+	SoKHCuaTinhDcPheDuyetKHValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0));
+	SoKHCuaTinhDcPheDuyetKQDDValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0));
+	//6 3.2
+	SoBCCTDcCongBoKHValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0));
+	SoBCCTDcCongBoKQDDValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(null, namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1));
+	final String KeHoach = "Kế hoạch";
+	final String ThucHien = "Thực hiện";
+
+	final DefaultCategoryDataset dl11 = new DefaultCategoryDataset();
+	dl11.addValue(SoDauNoiKHValue, KeHoach, KeHoach);
+	dl11.addValue(SoDauNoiKQDDValue, ThucHien, ThucHien);
+	JFreeChart barChart = ChartFactory.createBarChart3D("DLI 1.1 ("+ namValueInt+")" , "DLI 1.1", "", dl11, PlotOrientation.VERTICAL, true, true, false);
+
+	int width = 640; /* Width of the image */
+	int height = 480; /* Height of the image */
+
+
+
+	//create a JPG image of saleschart
+	ChartUtilities.saveChartAsJPEG(new File(path + "/dli11.jpg"), barChart, 200, 300);
+
+	final DefaultCategoryDataset dl12 = new DefaultCategoryDataset();
+	dl12.addValue(SoNhaTieuHGDXayMoiKHValue, KeHoach, KeHoach);
+	dl12.addValue(SoNhaTieuHGDXayMoiKQDDValue, ThucHien, ThucHien);
+	JFreeChart barChart12 = ChartFactory.createBarChart3D("DLI 1.2 ("+ namValueInt+")", "DLI 1.2", "", dl12, PlotOrientation.VERTICAL, true, true, false);
+	//create a JPG image of saleschart
+	ChartUtilities.saveChartAsJPEG(new File(path + "/dli12.jpg"), barChart12, 200, 300);
+
+
+
+	final DefaultCategoryDataset dl21 = new DefaultCategoryDataset();
+	dl21.addValue(SoNgHgLoiTuCapNcBenVungKHValue, KeHoach, KeHoach);
+	dl21.addValue(SoNgHgLoiTuVSTXKQDDValue, ThucHien, ThucHien);
+	JFreeChart barChart21 = ChartFactory.createBarChart3D("DLI 2.1 ("+ namValueInt+")", "DLI 2.2", "", dl21, PlotOrientation.VERTICAL, true, true, false);
+	//create a JPG image of saleschart
+	ChartUtilities.saveChartAsJPEG(new File(path + "/dli21.jpg"), barChart21, 200, 300);
+
+
+	final DefaultCategoryDataset dl22 = new DefaultCategoryDataset();
+	dl22.addValue(SoNgHgLoiTuVSTXKHValue, KeHoach, KeHoach);
+	dl22.addValue(SoNgHgLoiTuVSTXKQDDValue, ThucHien, ThucHien);
+	JFreeChart barChart22 = ChartFactory.createBarChart3D("DLI 2.2 ("+ namValueInt+")", "DLI 2.2", "", dl22, PlotOrientation.VERTICAL, true, true, false);
+	//create a JPG image of saleschart
+	ChartUtilities.saveChartAsJPEG(new File(path + "/dli22.jpg"), barChart22, 200, 300);
+	
+	super.render(request, response);
+	
+}
+
+
+
+
+
+public void piechart(ActionRequest request, ActionResponse response) {
+ 
+	 
+  try {
+   //get running server path
+   PortletContext context = request.getPortletSession().getPortletContext();
+   String path = context.getRealPath("/images");
+
+   final String fiat = "FIAT";
+   final String audi = "AUDI";
+   final String ford = "FORD";
+   final String speed = "Speed";
+   final String millage = "Millage";
+   final String userrating = "User Rating";
+   final String safety = "safety";
+
+   final DefaultCategoryDataset dataset = new DefaultCategoryDataset( );
+
+   dataset.addValue( 1.0 , fiat , speed );
+   dataset.addValue( 3.0 , fiat , userrating );
+   dataset.addValue( 5.0 , fiat , millage );
+   dataset.addValue( 5.0 , fiat , safety );
+
+   dataset.addValue( 5.0 , audi , speed );
+   dataset.addValue( 6.0 , audi , userrating );
+   dataset.addValue( 10.0 , audi , millage );
+   dataset.addValue( 4.0 , audi , safety );
+
+   dataset.addValue( 4.0 , ford , speed );
+   dataset.addValue( 2.0 , ford , userrating );
+   dataset.addValue( 3.0 , ford , millage );
+   dataset.addValue( 6.0 , ford , safety );
+
+   JFreeChart barChart = ChartFactory.createBarChart( "CAR USAGE STATIStICS",   "Category", "Score", dataset,PlotOrientation.VERTICAL,true, true, false);
+      
+   int width = 640; /* Width of the image */
+   int height = 480; /* Height of the image */ 
+ 
+   
+   
+   //create a JPG image of saleschart
+   ChartUtilities.saveChartAsJPEG(new File(path + "/salespiechart.jpg"), barChart, 300, 300);
+   //create a JPG image of Bookings
+  // ChartUtilities.saveChartAsJPEG(new File(path + "/bookingspiechart.jpg"), chart1, 300, 300);
+
+  } catch (Exception e) {
+   // TODO Auto-generated catch block
+   e.printStackTrace();
+  }
+ }
+ public DefaultPieDataset createPieDataSet(ActionRequest request,
+  ActionResponse response) throws IOException, PortletException {
+  DefaultPieDataset dataset = new DefaultPieDataset();
+  String high = PortletProps.get("high");
+  String s = PortletProps.get("text");
+  String low = PortletProps.get("low");
+  String avg = PortletProps.get("avg");
+  String highValue = PortletProps.get("highvalue");
+  double hValue = Double.parseDouble(highValue);
+  String sValue = PortletProps.get("textvalue");
+  double sValue1 = Double.parseDouble(sValue);
+  String lowValue = PortletProps.get("lowvalue");
+  double lValue = Double.parseDouble(lowValue);
+  String avgValue = PortletProps.get("avgvalue");
+  double aValue = Double.parseDouble(avgValue);
+  dataset.setValue(high, hValue);
+  dataset.setValue(s, sValue1);
+  dataset.setValue(low, lValue);
+  dataset.setValue(avg, aValue);
+  dataset.setValue("High", 25.0);
+  dataset.setValue("", 25.0);
+  dataset.setValue("Low", 25.0);
+  dataset.setValue("Avg", 25.0);
+  return dataset;
+ } 
+ public DefaultCategoryDataset createCategoryDataSet() {
+  //create category dataset object
+  DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+  //set the category dataset values
+  dataset.setValue(1, "Avg", new Integer(50));
+  dataset.setValue(3, "", new Integer(50));
+  dataset.setValue(4, "High", new Integer(50));
+  dataset.setValue(6, "Low", new Integer(50));
+  return dataset;
+ }
+ public DefaultPieDataset createRingDataSet(ActionRequest request,
+  ActionResponse response) {
+  //create ring dataset object
+  DefaultPieDataset dataset = new DefaultPieDataset();
+  //set the ring dataset values
+  dataset.setValue("0", 10.0);
+  dataset.setValue("10", 10.0);
+  dataset.setValue("20", 10.0);
+  dataset.setValue("30", 10.0);
+  dataset.setValue("40", 10.0);
+  dataset.setValue("50", 10.0);
+  dataset.setValue("60", 10.0);
+  dataset.setValue("70", 10.0);
+  dataset.setValue("80", 10.0);
+  dataset.setValue("90", 10.0);
+  dataset.setValue("100", 10.0);
+  return dataset;
+ }
+}

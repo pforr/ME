@@ -1,0 +1,149 @@
+package vn.dtt.sol.ns.reporting.model.dli22pl;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import vn.dtt.sol.ns.danhgiavesinh.business.DANHGIAVESINHXABusiness;
+import vn.dtt.sol.ns.danhgiavesinh.dao.model.DANHGIAVESINHXA;
+import vn.dtt.sol.ns.reporting.model.dli22.SoNgDcTiepCanVsDienVSTXDanhSach;
+import vn.dtt.sol.ns.reporting.model.dli22pl.BaoCaoVSTX_PL5_4_1.DuLieuDong;
+import vn.dtt.sol.ns.util.NuocSachUtils;
+import vn.dtt.sol.ns.vesinhmoitruong.business.VeSinhGiaDinhBusiness;
+import vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.util.StringPool;
+import com.liferay.portal.kernel.util.Validator;
+
+
+public class BaoCaoVSTX_PL5_4_2_Export {
+	
+	private static Log log = LogFactoryUtil.getLog(BaoCaoVSTX_PL5_4_2_Export.class);
+	
+	public static BaoCaoVSTX_PL5_4_2 getModel(String namBaoCao, String maTinh, String soBaoCao, String ngayBaoCao, String nguoiLap, String nguoiDuyet){
+		
+		log.info("===BaoCaoVSTX_PL5_4_2===");
+		log.info("--getModel==namBaoCao=="+namBaoCao+"==soBaoCao--"+soBaoCao+"==ngayBaoCao--"+ngayBaoCao+"==maTinh--"+maTinh);
+		
+		String KETLUANVSTX = "1"; // 1 la co vstx
+		BaoCaoVSTX_PL5_4_2 result = new BaoCaoVSTX_PL5_4_2();
+		
+		List<BaoCaoVSTX_PL5_4_2.DuLieuDong> lstDuLieuDong = null;
+		BaoCaoVSTX_PL5_4_2.DuLieuDong duLieuDong = null;
+		
+		
+		String namValue = "";
+		String tenTinhValue = "";
+		String baoCaoSoValue = "";
+		
+//		String baoCaoNgayThangNamValue = "";
+//		String nguoiLapValue = "";
+//		String nguoiDuyetValue = "";
+//		
+		namValue = Validator.isNotNull(namBaoCao) ? namBaoCao : "";
+		tenTinhValue = NuocSachUtils.getNameTinh(maTinh);
+		baoCaoSoValue = Validator.isNotNull(soBaoCao) ? soBaoCao : "";
+		
+//		if(Validator.isNotNull(ngayBaoCao)){
+//			Date dateNgayBaoCao = FormatData.parseStringToDateTypeDDMMYYYY(ngayBaoCao.trim());
+//			baoCaoNgayThangNamValue = ReportFunction.parserDateToString4(dateNgayBaoCao);
+//		}
+//		if(Validator.isNotNull(nguoiLap)){
+//			nguoiLapValue = nguoiLap;
+//		}
+//		if(Validator.isNotNull(nguoiDuyet)){
+//			nguoiDuyetValue = nguoiDuyet;
+//		}
+//		
+		
+		String xaValue = "";
+		String thonValue = "";
+		int stt = 0;
+		
+		lstDuLieuDong = new ArrayList<BaoCaoVSTX_PL5_4_2.DuLieuDong>();
+		List<DANHGIAVESINHXA> lstDanhGiaVeSinhXa = DANHGIAVESINHXABusiness.getDanhGiaVeSinhXaBaoCao(maTinh, null, null, namBaoCao, KETLUANVSTX);
+		
+		List<String> lstDanhGiaThon = new ArrayList<>();
+		List<VeSinhGiaDinh> lstVeSinhGiaDinh = new ArrayList<VeSinhGiaDinh>();
+//		
+		if (Validator.isNotNull(lstDanhGiaVeSinhXa) && lstDanhGiaVeSinhXa.size() > 0) {
+			log.info("====lstVeSinhGiaDinh==" + lstDanhGiaVeSinhXa.size());
+			
+			//--------------------XA--------------------
+			for (DANHGIAVESINHXA veSinhXa : lstDanhGiaVeSinhXa) {
+				xaValue = Validator.isNotNull(veSinhXa.getMaXa()) ? NuocSachUtils.getNameXa(veSinhXa.getMaXa()) : "";
+				duLieuDong = result.new DuLieuDong("", xaValue, "", "", "", "", "", "", "", "", "", "", "", "");
+				lstDuLieuDong.add(duLieuDong);
+				
+				
+				
+				//------------------THON----------------
+				for (String thon : lstDanhGiaThon) {
+					thon = "";
+					duLieuDong = result.new DuLieuDong("", xaValue, "", "", "", "", "", "", "", "", "", "", "", "");
+					lstDuLieuDong.add(duLieuDong);
+					
+					
+					//------------------------GIA DINH----------------------
+					for (VeSinhGiaDinh giaDinh : lstVeSinhGiaDinh) {
+						stt = stt + 1;
+						duLieuDong = result.new DuLieuDong(stt + "", giaDinh.getTenChuHo(), "", "", "", "", "", "", "", "", "", "", "", giaDinh.getGhiChu());
+						lstDuLieuDong.add(duLieuDong);
+					}
+					
+					
+					
+				}
+				
+				
+				duLieuDong = result.new DuLieuDong(stt + "", "Tổng số: " + stt + " hộ gia đình", "", "", "", "", "", "", "", "", "", "", "", "");
+				lstDuLieuDong.add(duLieuDong);
+				
+				duLieuDong = result.new DuLieuDong("", "", "", "", "", "", "", "", "", "", "", "", "", "");
+				lstDuLieuDong.add(duLieuDong);
+				
+				//chay xong thon, reset
+				stt = 0;
+				
+				
+//				soNgDcTiepCanVsDienVSTXDanhSach = new SoNgDcTiepCanVsDienVSTXDanhSach();
+//				
+//				String huyenValue = "";
+//				String xaValue = "";
+//				String coNhaTieuHVSValue = "0";
+//				String coNhaTieuValue = "0";
+//				String truongHocCoNcSachVaNhaTieuHVSValue = "0";
+//				String tramYteCoNcSachVaNhaTieuHVSValue = "0";
+//				String soNgHuongLoiTuVSTXValue = "0";
+//				
+//				huyenValue = Validator.isNotNull(danhgiavesinhxa.getMaHuyen()) ? NuocSachUtils.getNameHuyen(null, danhgiavesinhxa.getMaHuyen()) : "";
+//				xaValue = Validator.isNotNull(danhgiavesinhxa.getMaXa()) ? NuocSachUtils.getNameXa( danhgiavesinhxa.getMaXa()) : "";
+//				coNhaTieuHVSValue = (danhgiavesinhxa.getTiLeHGDCoNhaTieuHVS() > 0) ? String.valueOf(danhgiavesinhxa.getTiLeHGDCoNhaTieuHVS()) : "0" ;
+//				coNhaTieuValue = (danhgiavesinhxa.getTiLeHGDCoNhaTieu() > 0) ? String.valueOf(danhgiavesinhxa.getTiLeHGDCoNhaTieu()) : "0" ;
+//				truongHocCoNcSachVaNhaTieuHVSValue = (danhgiavesinhxa.getTiLeTruongHocHVS() > 0) ? String.valueOf(danhgiavesinhxa.getTiLeTruongHocHVS()) : "0" ;
+//				tramYteCoNcSachVaNhaTieuHVSValue = (danhgiavesinhxa.getTiLeTramYTeHVS() > 0) ? String.valueOf(danhgiavesinhxa.getTiLeTramYTeHVS()) : "0" ;
+//				soNgHuongLoiTuVSTXValue = (danhgiavesinhxa.getSoDan() > 0) ? ConvertUtil.parseIntToString1000(danhgiavesinhxa.getSoDan()) : "0" ;
+//				
+//				soNgDcTiepCanVsDienVSTXDanhSach.setHuyen(huyenValue);
+//				soNgDcTiepCanVsDienVSTXDanhSach.setXa(xaValue);
+//				soNgDcTiepCanVsDienVSTXDanhSach.setCoNhaTieuHVS(coNhaTieuHVSValue);
+//				soNgDcTiepCanVsDienVSTXDanhSach.setCoNhaTieu(coNhaTieuValue);
+//				soNgDcTiepCanVsDienVSTXDanhSach.setTruongHocCoNcSachVaNhaTieuHVS(truongHocCoNcSachVaNhaTieuHVSValue);
+//				soNgDcTiepCanVsDienVSTXDanhSach.setTramYteCoNcSachVaNhaTieuHVS(tramYteCoNcSachVaNhaTieuHVSValue);
+//				soNgDcTiepCanVsDienVSTXDanhSach.setSoNgHuongLoiTuVSTX(soNgHuongLoiTuVSTXValue);
+//				
+//				lstSoNgDcTiepCanVsDienVSTXDanhSach.add(soNgDcTiepCanVsDienVSTXDanhSach);
+			}
+		}
+//		
+		result.setNam(namValue);
+		result.setTenTinh(tenTinhValue);
+		result.setBaoCaoSo(baoCaoSoValue);
+//		result.setBaoCaoNgayThangNam(baoCaoNgayThangNamValue);
+//		result.setNguoiLap(nguoiLapValue);
+//		result.setNguoiDuyet(nguoiDuyetValue);
+		result.setLstDuLieuDong(lstDuLieuDong);
+		return result;
+	}
+}

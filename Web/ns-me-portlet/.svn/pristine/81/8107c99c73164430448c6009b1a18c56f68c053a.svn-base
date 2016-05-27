@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hopnhat_tu_subreport5" pageWidth="802" pageHeight="555" orientation="Landscape" columnWidth="802" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="6019f4ea-457b-4680-8323-4dabc5aef9c7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["D:\\DEV\\liferay-plugins-sdk-6.2.0\\portlets\\ns-me-portlet\\docroot\\report\\baocaomoi\\"]]></defaultValueExpression>
+	</parameter>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="chuHoNam11" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chuHoNam11]]></fieldDescription>
+	</field>
+	<field name="chuHoNam12" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chuHoNam12]]></fieldDescription>
+	</field>
+	<field name="chuHoNam22" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chuHoNam22]]></fieldDescription>
+	</field>
+	<field name="chuHoNu11" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chuHoNu11]]></fieldDescription>
+	</field>
+	<field name="chuHoNu12" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chuHoNu12]]></fieldDescription>
+	</field>
+	<field name="chuHoNu22" class="java.lang.Integer">
+		<fieldDescription><![CDATA[chuHoNu22]]></fieldDescription>
+	</field>
+	<field name="class" class="java.lang.Class">
+		<fieldDescription><![CDATA[class]]></fieldDescription>
+	</field>
+	<field name="lsthopNhatTinhTongHopVeGioiTUDanhSach11" class="java.util.List">
+		<fieldDescription><![CDATA[lsthopNhatTinhTongHopVeGioiTUDanhSach11]]></fieldDescription>
+	</field>
+	<field name="lsthopNhatTinhTongHopVeGioiTUDanhSach12" class="java.util.List">
+		<fieldDescription><![CDATA[lsthopNhatTinhTongHopVeGioiTUDanhSach12]]></fieldDescription>
+	</field>
+	<field name="lsthopNhatTinhTongHopVeGioiTUDanhSach22" class="java.util.List">
+		<fieldDescription><![CDATA[lsthopNhatTinhTongHopVeGioiTUDanhSach22]]></fieldDescription>
+	</field>
+	<field name="nam" class="java.lang.String">
+		<fieldDescription><![CDATA[nam]]></fieldDescription>
+	</field>
+	<field name="tongSo11" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tongSo11]]></fieldDescription>
+	</field>
+	<field name="tongSo12" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tongSo12]]></fieldDescription>
+	</field>
+	<field name="tongSo22" class="java.lang.Integer">
+		<fieldDescription><![CDATA[tongSo22]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="220" y="0" width="220" height="30" uuid="b0ca1aee-e380-4774-a422-b202856dd939"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tongSo11} != null ) ? $F{tongSo11} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="440" y="0" width="212" height="30" uuid="e8f6c8b1-9304-457f-9ff2-4818806cd387"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{chuHoNam11} != null ) ? $F{chuHoNam11} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="220" height="30" uuid="05069ac3-b3d9-4ea1-85d0-cffa8a362a28"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CSGN 1.1 Số đấu nối mới hoạt động"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="652" y="0" width="150" height="30" uuid="9e367d8c-2355-463c-b44c-ff39d60b89ca"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.5"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{chuHoNu11} != null) ? $F{chuHoNu11} : 0)]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement positionType="Float" x="0" y="30" width="802" height="20" uuid="24156035-a17c-440b-a91f-4c5b24bf8174">
+					<printWhenExpression><![CDATA[($F{lsthopNhatTinhTongHopVeGioiTUDanhSach11} != null && $F{lsthopNhatTinhTongHopVeGioiTUDanhSach11}.size() >0)]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lsthopNhatTinhTongHopVeGioiTUDanhSach11})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "hopnhat_tu_subreport5_subreport1.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="50">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="220" y="0" width="220" height="30" uuid="3e89520b-a7ee-4e5f-a8c7-0f43c79a0b0b"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tongSo12} != null) ? $F{tongSo12} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="652" y="0" width="150" height="30" uuid="fe201cc3-2f97-41b8-a518-d1becae1c07e"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="1.0"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{chuHoNu12} != null ) ? $F{chuHoNu12} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="440" y="0" width="212" height="30" uuid="daa46002-b06d-46b2-9e41-5ab1b512a41c"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{chuHoNam12} != null) ? $F{chuHoNam12} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="220" height="30" uuid="8d2929f6-fba3-4049-86e7-40d697a6a0a4"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CSGN 1.2 Số nhà tiêu hộ gia đình HVS mới"]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="30" width="802" height="20" uuid="73883e53-2329-4119-bf17-8254178b0bcd">
+					<printWhenExpression><![CDATA[($F{lsthopNhatTinhTongHopVeGioiTUDanhSach12} != null && $F{lsthopNhatTinhTongHopVeGioiTUDanhSach12}.size() >0)]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lsthopNhatTinhTongHopVeGioiTUDanhSach12})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "hopnhat_tu_subreport5_subreport2.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+		<band height="60">
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="220" y="0" width="220" height="40" uuid="ae2cc65b-c5ca-44ea-90e0-d5fbee1cf6c3"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{tongSo22} != null ) ? $F{tongSo22} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="0" y="0" width="220" height="40" uuid="4596e278-8c38-4361-acf2-365e37c06c22"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement verticalAlignment="Middle" markup="html">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA["CSGN 2.2 Số người hưởng lợi từ <br> \"Vệ sinh toàn xã\" "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="440" y="0" width="212" height="40" uuid="9a3c47b8-c134-4660-ab78-1ffd95300aa3"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.0"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{chuHoNam22} != null ) ? $F{chuHoNam22} : 0)]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement positionType="Float" x="652" y="0" width="150" height="40" uuid="8fd0c104-d942-4c43-8687-8e59292239b9"/>
+				<box topPadding="3" leftPadding="3" bottomPadding="3" rightPadding="3">
+					<pen lineWidth="0.5"/>
+					<topPen lineWidth="0.0"/>
+					<leftPen lineWidth="0.5"/>
+					<bottomPen lineWidth="0.5"/>
+					<rightPen lineWidth="0.5"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="10" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[(($F{chuHoNu22} != null ) ? $F{chuHoNu22} : 0)]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement x="0" y="40" width="802" height="20" uuid="2509e999-606a-481c-8661-a24a9aa2c240">
+					<printWhenExpression><![CDATA[($F{lsthopNhatTinhTongHopVeGioiTUDanhSach22} != null && $F{lsthopNhatTinhTongHopVeGioiTUDanhSach22}.size() >0)]]></printWhenExpression>
+				</reportElement>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{lsthopNhatTinhTongHopVeGioiTUDanhSach22})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{SUBREPORT_DIR} + "hopnhat_tu_subreport5_subreport3.jasper"]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+</jasperReport>

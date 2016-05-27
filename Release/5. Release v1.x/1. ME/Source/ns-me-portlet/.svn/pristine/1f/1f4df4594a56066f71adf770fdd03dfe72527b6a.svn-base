@@ -1,0 +1,354 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package vn.dtt.cmon.dm.dao.model;
+
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.model.ModelWrapper;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * <p>
+ * This class is a wrapper for {@link DM_THONXOM}.
+ * </p>
+ *
+ * @author khoa.vu
+ * @see DM_THONXOM
+ * @generated
+ */
+public class DM_THONXOMWrapper implements DM_THONXOM, ModelWrapper<DM_THONXOM> {
+	public DM_THONXOMWrapper(DM_THONXOM dm_thonxom) {
+		_dm_thonxom = dm_thonxom;
+	}
+
+	@Override
+	public Class<?> getModelClass() {
+		return DM_THONXOM.class;
+	}
+
+	@Override
+	public String getModelClassName() {
+		return DM_THONXOM.class.getName();
+	}
+
+	@Override
+	public Map<String, Object> getModelAttributes() {
+		Map<String, Object> attributes = new HashMap<String, Object>();
+
+		attributes.put("id", getId());
+		attributes.put("maTinh", getMaTinh());
+		attributes.put("maHuyen", getMaHuyen());
+		attributes.put("maXa", getMaXa());
+		attributes.put("thonXom", getThonXom());
+
+		return attributes;
+	}
+
+	@Override
+	public void setModelAttributes(Map<String, Object> attributes) {
+		Long id = (Long)attributes.get("id");
+
+		if (id != null) {
+			setId(id);
+		}
+
+		String maTinh = (String)attributes.get("maTinh");
+
+		if (maTinh != null) {
+			setMaTinh(maTinh);
+		}
+
+		String maHuyen = (String)attributes.get("maHuyen");
+
+		if (maHuyen != null) {
+			setMaHuyen(maHuyen);
+		}
+
+		String maXa = (String)attributes.get("maXa");
+
+		if (maXa != null) {
+			setMaXa(maXa);
+		}
+
+		String thonXom = (String)attributes.get("thonXom");
+
+		if (thonXom != null) {
+			setThonXom(thonXom);
+		}
+	}
+
+	/**
+	* Returns the primary key of this d m_ t h o n x o m.
+	*
+	* @return the primary key of this d m_ t h o n x o m
+	*/
+	@Override
+	public long getPrimaryKey() {
+		return _dm_thonxom.getPrimaryKey();
+	}
+
+	/**
+	* Sets the primary key of this d m_ t h o n x o m.
+	*
+	* @param primaryKey the primary key of this d m_ t h o n x o m
+	*/
+	@Override
+	public void setPrimaryKey(long primaryKey) {
+		_dm_thonxom.setPrimaryKey(primaryKey);
+	}
+
+	/**
+	* Returns the ID of this d m_ t h o n x o m.
+	*
+	* @return the ID of this d m_ t h o n x o m
+	*/
+	@Override
+	public long getId() {
+		return _dm_thonxom.getId();
+	}
+
+	/**
+	* Sets the ID of this d m_ t h o n x o m.
+	*
+	* @param id the ID of this d m_ t h o n x o m
+	*/
+	@Override
+	public void setId(long id) {
+		_dm_thonxom.setId(id);
+	}
+
+	/**
+	* Returns the ma tinh of this d m_ t h o n x o m.
+	*
+	* @return the ma tinh of this d m_ t h o n x o m
+	*/
+	@Override
+	public java.lang.String getMaTinh() {
+		return _dm_thonxom.getMaTinh();
+	}
+
+	/**
+	* Sets the ma tinh of this d m_ t h o n x o m.
+	*
+	* @param maTinh the ma tinh of this d m_ t h o n x o m
+	*/
+	@Override
+	public void setMaTinh(java.lang.String maTinh) {
+		_dm_thonxom.setMaTinh(maTinh);
+	}
+
+	/**
+	* Returns the ma huyen of this d m_ t h o n x o m.
+	*
+	* @return the ma huyen of this d m_ t h o n x o m
+	*/
+	@Override
+	public java.lang.String getMaHuyen() {
+		return _dm_thonxom.getMaHuyen();
+	}
+
+	/**
+	* Sets the ma huyen of this d m_ t h o n x o m.
+	*
+	* @param maHuyen the ma huyen of this d m_ t h o n x o m
+	*/
+	@Override
+	public void setMaHuyen(java.lang.String maHuyen) {
+		_dm_thonxom.setMaHuyen(maHuyen);
+	}
+
+	/**
+	* Returns the ma xa of this d m_ t h o n x o m.
+	*
+	* @return the ma xa of this d m_ t h o n x o m
+	*/
+	@Override
+	public java.lang.String getMaXa() {
+		return _dm_thonxom.getMaXa();
+	}
+
+	/**
+	* Sets the ma xa of this d m_ t h o n x o m.
+	*
+	* @param maXa the ma xa of this d m_ t h o n x o m
+	*/
+	@Override
+	public void setMaXa(java.lang.String maXa) {
+		_dm_thonxom.setMaXa(maXa);
+	}
+
+	/**
+	* Returns the thon xom of this d m_ t h o n x o m.
+	*
+	* @return the thon xom of this d m_ t h o n x o m
+	*/
+	@Override
+	public java.lang.String getThonXom() {
+		return _dm_thonxom.getThonXom();
+	}
+
+	/**
+	* Sets the thon xom of this d m_ t h o n x o m.
+	*
+	* @param thonXom the thon xom of this d m_ t h o n x o m
+	*/
+	@Override
+	public void setThonXom(java.lang.String thonXom) {
+		_dm_thonxom.setThonXom(thonXom);
+	}
+
+	@Override
+	public boolean isNew() {
+		return _dm_thonxom.isNew();
+	}
+
+	@Override
+	public void setNew(boolean n) {
+		_dm_thonxom.setNew(n);
+	}
+
+	@Override
+	public boolean isCachedModel() {
+		return _dm_thonxom.isCachedModel();
+	}
+
+	@Override
+	public void setCachedModel(boolean cachedModel) {
+		_dm_thonxom.setCachedModel(cachedModel);
+	}
+
+	@Override
+	public boolean isEscapedModel() {
+		return _dm_thonxom.isEscapedModel();
+	}
+
+	@Override
+	public java.io.Serializable getPrimaryKeyObj() {
+		return _dm_thonxom.getPrimaryKeyObj();
+	}
+
+	@Override
+	public void setPrimaryKeyObj(java.io.Serializable primaryKeyObj) {
+		_dm_thonxom.setPrimaryKeyObj(primaryKeyObj);
+	}
+
+	@Override
+	public com.liferay.portlet.expando.model.ExpandoBridge getExpandoBridge() {
+		return _dm_thonxom.getExpandoBridge();
+	}
+
+	@Override
+	public void setExpandoBridgeAttributes(
+		com.liferay.portal.model.BaseModel<?> baseModel) {
+		_dm_thonxom.setExpandoBridgeAttributes(baseModel);
+	}
+
+	@Override
+	public void setExpandoBridgeAttributes(
+		com.liferay.portlet.expando.model.ExpandoBridge expandoBridge) {
+		_dm_thonxom.setExpandoBridgeAttributes(expandoBridge);
+	}
+
+	@Override
+	public void setExpandoBridgeAttributes(
+		com.liferay.portal.service.ServiceContext serviceContext) {
+		_dm_thonxom.setExpandoBridgeAttributes(serviceContext);
+	}
+
+	@Override
+	public java.lang.Object clone() {
+		return new DM_THONXOMWrapper((DM_THONXOM)_dm_thonxom.clone());
+	}
+
+	@Override
+	public int compareTo(DM_THONXOM dm_thonxom) {
+		return _dm_thonxom.compareTo(dm_thonxom);
+	}
+
+	@Override
+	public int hashCode() {
+		return _dm_thonxom.hashCode();
+	}
+
+	@Override
+	public com.liferay.portal.model.CacheModel<DM_THONXOM> toCacheModel() {
+		return _dm_thonxom.toCacheModel();
+	}
+
+	@Override
+	public DM_THONXOM toEscapedModel() {
+		return new DM_THONXOMWrapper(_dm_thonxom.toEscapedModel());
+	}
+
+	@Override
+	public DM_THONXOM toUnescapedModel() {
+		return new DM_THONXOMWrapper(_dm_thonxom.toUnescapedModel());
+	}
+
+	@Override
+	public java.lang.String toString() {
+		return _dm_thonxom.toString();
+	}
+
+	@Override
+	public java.lang.String toXmlString() {
+		return _dm_thonxom.toXmlString();
+	}
+
+	@Override
+	public void persist()
+		throws com.liferay.portal.kernel.exception.SystemException {
+		_dm_thonxom.persist();
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) {
+			return true;
+		}
+
+		if (!(obj instanceof DM_THONXOMWrapper)) {
+			return false;
+		}
+
+		DM_THONXOMWrapper dm_thonxomWrapper = (DM_THONXOMWrapper)obj;
+
+		if (Validator.equals(_dm_thonxom, dm_thonxomWrapper._dm_thonxom)) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * @deprecated As of 6.1.0, replaced by {@link #getWrappedModel}
+	 */
+	public DM_THONXOM getWrappedDM_THONXOM() {
+		return _dm_thonxom;
+	}
+
+	@Override
+	public DM_THONXOM getWrappedModel() {
+		return _dm_thonxom;
+	}
+
+	@Override
+	public void resetOriginalValues() {
+		_dm_thonxom.resetOriginalValues();
+	}
+
+	private DM_THONXOM _dm_thonxom;
+}

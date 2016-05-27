@@ -1,0 +1,72 @@
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.VeSinhGiaDinhBusiness"%>
+<%@page import="com.liferay.portal.kernel.log.LogFactoryUtil"%>
+<%@page import="com.liferay.portal.kernel.log.Log"%>
+<%@page import="vn.dtt.sol.ns.kehoachvesinh.dao.service.KeHoachVeSinhLocalServiceUtil"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.dao.service.KeHoachKiemDemVeSinhLocalServiceUtil"%>
+<%@page import="vn.dtt.sol.ns.reporting.HoGiaDinhReportModel"%>
+<%@page import="vn.dtt.sol.ns.vesinhmoitruong.business.HoGiaDinhBussiness"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.List"%>
+<%
+ final Log _log2 = LogFactoryUtil.getLog("search_hogiadinh_kehoach_database_result.jspf");
+
+/* rasoatlttai
+List<HoGiaDinhReportModel> resultBase = new ArrayList<HoGiaDinhReportModel>(
+		HoGiaDinhBussiness.getListHoGiaDinhByTypeUserOnlyRaSoat(userMapping,
+				keHoachKiemDemVeSinh.getMaTinh(),
+														maHuyen,
+														maXa,
+														null,
+														"08",
+														Integer.toString(keHoachKiemDemVeSinh.getNam()),namBaoCaovstx,
+														"",
+														idNguoiTao,
+														advText,
+														searchContainer.getStart(), searchContainer.getEnd())
+		);
+*/	
+List<HoGiaDinhReportModel> resultBase = new ArrayList<HoGiaDinhReportModel>(
+		HoGiaDinhBussiness.getListHoGiaDinhByTypeUser(userMapping,
+				keHoachKiemDemVeSinh.getMaTinh(),
+														maHuyen,
+														maXa,
+														"",
+														"0",
+														Integer.toString(keHoachKiemDemVeSinh.getNam()),namBaoCaovstx,
+														"",
+														idNguoiTao,
+														advText,
+														searchContainer.getStart(), searchContainer.getEnd())
+		);
+										
+		
+results = resultBase;
+/* rasoatlttai
+
+total = VeSinhGiaDinhBusiness.countVeSinhGiaDinhMauNgauNhienOnlySVRaSoat(keHoachKiemDemVeSinh.getMaTinh(), maHuyen, maXa, StringPool.BLANK, "08", Integer.toString(keHoachKiemDemVeSinh.getNam()), "rasoat");
+
+*/
+total = KeHoachVeSinhLocalServiceUtil.countHGD(keHoachKiemDemVeSinh.getMaTinh(),
+		maHuyen,
+		maXa,
+		"",
+		"0",
+		Integer.toString(keHoachKiemDemVeSinh.getNam()),namBaoCaovstx,
+		"",
+		idNguoiTao,
+		advText);
+_log2.info("ko-rasoatlttai-"+total);
+/* HoGiaDinhBussiness.countHoGiaDinhByTypeUser(userMapping,
+		keHoachKiemDemVeSinh.getMaTinh(),
+		maHuyen,
+		maXa,
+		"",
+		"0",
+		"9999"+keHoachKiemDemVeSinh.getNam(),namBaoCaovstx,
+		"",
+		idNguoiTao,
+		advText,
+		searchContainer.getStart(), searchContainer.getEnd()); */
+pageContext.setAttribute("results", results);
+pageContext.setAttribute("total", total);
+%>

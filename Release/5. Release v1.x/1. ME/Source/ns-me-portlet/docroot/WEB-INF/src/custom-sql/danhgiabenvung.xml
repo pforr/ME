@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinder.countTongSoNguoiTrongXa">
+		<![CDATA[
+			SELECT SUM(me_thongtinkiemdemhogd.soNguoiTrongHo) AS COUNT_VALUE FROM me_thongtinkiemdemhogd WHERE maxa = ?
+		]]>
+	</sql>
+
+
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinder.countHoGiaDinhTrongXa">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_vesinhgiadinh WHERE maxa = ? 
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinder.countMauNgauNhienTrongXa">
+		<![CDATA[
+			SELECT COUNT(*) AS COUNT_VALUE FROM me_vesinhgiadinh WHERE maxa = ? AND MAUNGAUNHIEN = ?
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinder.countHoGiaDinhCoNhaVS">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemhogd
+			WHERE
+				me_thongtinkiemdemhogd.vesinhgiadinhid IN (
+					SELECT
+						me_vesinhgiadinh.id
+					FROM
+						me_vesinhgiadinh
+					WHERE
+						maxa = ?
+					AND me_vesinhgiadinh.MAUNGAUNHIEN = ?
+				)
+			AND daketthucdieutra != 3
+			AND me_thongtinkiemdemhogd.conhatieu = 1
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.DanhGiaVeSinhXaNewFakeFinder.countHoGiaDinhCoNhaTieuHVS">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemhogd
+			WHERE
+				me_thongtinkiemdemhogd.vesinhgiadinhid IN (
+					SELECT
+						me_vesinhgiadinh.id
+					FROM
+						me_vesinhgiadinh
+					WHERE
+						maxa = ?
+					AND me_vesinhgiadinh.MAUNGAUNHIEN = ?
+				)
+			AND daketthucdieutra != 3
+			AND me_thongtinkiemdemhogd.conhatieu = 1
+			AND (me_thongtinkiemdemhogd.danhgiakiemdem = 1 || me_thongtinkiemdemhogd.danhgiakiemdem = 2)
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungFinder.finder">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_danhgiabenvung
+			[$WHERE_CLAUSE$]
+		]]>
+	</sql>
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DanhGiaBenVungFinder.count">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_danhgiabenvung
+			[$WHERE_CLAUSE$]
+		]]>
+	</sql>
+</custom-sql>

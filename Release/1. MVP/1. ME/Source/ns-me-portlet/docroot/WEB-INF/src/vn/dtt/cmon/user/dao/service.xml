@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="vn.dtt.cmon.user.dao" auto-namespace-tables="false">
+	<author>khoa.vu</author>
+	<namespace>UserNuocSach</namespace>
+
+	<entity name="UserMapping" table="DM_USERMAPPING" 
+		local-service="true" remote-service="false" data-source="dmDataSource" >
+
+		<column name="id" db-name="ID" type="long" primary="true" />
+		<column name="name" db-name="NAME" type="String"/>		
+		<column name="userId" db-name="USERID" type="long"/>
+		<column name="userType" db-name="USERTYPE" type="int" />
+		<column name="orgCode1" db-name="ORGCODE1" type="String" />
+		<column name="orgCode2" db-name="ORGCODE2" type="String" />
+
+		<!-- Finder methods -->
+		<finder name="O_C_1" return-type="Collection">
+			<finder-column name="orgCode1" />
+		</finder>
+		
+		<finder name="O_C_1_O_C_2" return-type="Collection">
+			<finder-column name="orgCode1" />
+			<finder-column name="orgCode2" />
+		</finder>
+	
+		<finder name="O_C_2" return-type="Collection">
+				<finder-column name="orgCode2" />
+		</finder>
+			
+		<finder name="T_O_C_1" return-type="Collection">
+			<finder-column name="userType" />
+			<finder-column name="orgCode1" />
+		</finder>
+		
+		<finder name="T_O_C_2" return-type="Collection">
+			<finder-column name="userType" />
+			<finder-column name="orgCode1" />
+			<finder-column name="orgCode2" />
+		</finder>
+		
+		<finder name="U_T" return-type="Collection">
+				<finder-column name="userType" />
+		</finder>
+		
+		<finder return-type="UserMapping" name="U_M">
+			<finder-column name="userId"/>
+		</finder>
+		
+	</entity>
+
+</service-builder>

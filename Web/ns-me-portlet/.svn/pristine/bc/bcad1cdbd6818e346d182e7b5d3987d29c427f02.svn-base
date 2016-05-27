@@ -1,0 +1,235 @@
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+
+package vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence;
+
+import com.liferay.portal.kernel.bean.PortletBeanLocatorUtil;
+import com.liferay.portal.kernel.util.ReferenceRegistry;
+
+/**
+ * @author BinhTH
+ */
+public class VeSinhGiaDinhFinderUtil {
+	public static int countVeSinhGiaDinhSearch(java.lang.String maTinh,
+		java.lang.String maHuyen, java.lang.String maXa,
+		java.lang.String loaiNhaTieuId, java.lang.String trangThai,
+		java.lang.String namBaoCao, java.lang.String namBaoCaoVstx)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .countVeSinhGiaDinhSearch(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao, namBaoCaoVstx);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhSearch(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String trangThai, java.lang.String namBaoCao,
+		java.lang.String namBaoCaoVstx, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhSearch(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao, namBaoCaoVstx, start, end);
+	}
+
+	public static int countVeSinhGiaDinhSearch(java.lang.String maTinh,
+		java.lang.String maHuyen, java.lang.String maXa,
+		java.lang.String loaiNhaTieuId, java.lang.String trangThai,
+		java.lang.String namBaoCao, java.lang.String namBaoCaoVstx,
+		java.lang.String ngayNhap, java.lang.String idNguoiTao,
+		java.lang.String advText)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .countVeSinhGiaDinhSearch(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao, namBaoCaoVstx, ngayNhap,
+			idNguoiTao, advText);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhSearch(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String trangThai, java.lang.String namBaoCao,
+		java.lang.String namBaoCaoVstx, java.lang.String ngayNhap,
+		java.lang.String idNguoiTao, java.lang.String advText, int start,
+		int end) throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhSearch(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao, namBaoCaoVstx, ngayNhap,
+			idNguoiTao, advText, start, end);
+	}
+
+	public static int countGioiTinhChuHo(java.lang.String maTinh,
+		java.lang.String namBaoCao, java.lang.String namXayDung,
+		java.lang.String gioiTinhChuHo, java.lang.String trangThai)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .countGioiTinhChuHo(maTinh, namBaoCao, namXayDung,
+			gioiTinhChuHo, trangThai);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhGroupByMaTinhTW(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String[] trangThai, java.lang.String namBaoCao)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhGroupByMaTinhTW(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhGroupByMaHuyenMaXaAndMaXaNotInTW(
+		java.lang.String maTinh, java.lang.String[] trangThai,
+		java.lang.String namBaoCao, java.lang.String dangKyVSTX)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhGroupByMaHuyenMaXaAndMaXaNotInTW(maTinh,
+			trangThai, namBaoCao, dangKyVSTX);
+	}
+
+	public static int countVeSinhGiaDinhGroupByMaHuyen(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String[] trangThai,
+		java.lang.String namBaoCao)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .countVeSinhGiaDinhGroupByMaHuyen(maTinh, maHuyen, maXa,
+			trangThai, namBaoCao);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhGroupByMaHuyen(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String[] trangThai, java.lang.String namBaoCao)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhGroupByMaHuyen(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhThoiGianChot(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String[] trangThai, java.lang.String namBaoCao)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhThoiGianChot(maTinh, maHuyen, maXa,
+			loaiNhaTieuId, trangThai, namBaoCao);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhGroupByMaHuyenBaoCaoHopNhat(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String[] trangThai, int namBaoCao, int namToiThieu)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhGroupByMaHuyenBaoCaoHopNhat(maTinh,
+			maHuyen, maXa, loaiNhaTieuId, trangThai, namBaoCao, namToiThieu);
+	}
+
+	public static int countVeSinhGiaDinhGroupByMaHuyenBaoCaoHopNhat(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String[] trangThai, int namBaoCao,
+		int namToiThieu)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .countVeSinhGiaDinhGroupByMaHuyenBaoCaoHopNhat(maTinh,
+			maHuyen, maXa, trangThai, namBaoCao, namToiThieu);
+	}
+
+	public static int searchCountVeSinhGiaDinh(java.lang.String maTinh,
+		java.lang.String maHuyen, java.lang.String maXa,
+		java.lang.String thonXom, java.lang.String trangThai,
+		java.lang.String danhGiaKiemDem, java.lang.String tkKiemDemVien,
+		java.lang.String tkGiamSatVien, java.lang.String ngayKiemDem,
+		java.lang.String namBaoCao, java.lang.String namBaoCaoVstx,
+		java.lang.String idNguoiTao, java.lang.String ngayTao,
+		java.lang.String advText)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .searchCountVeSinhGiaDinh(maTinh, maHuyen, maXa, thonXom,
+			trangThai, danhGiaKiemDem, tkKiemDemVien, tkGiamSatVien,
+			ngayKiemDem, namBaoCao, namBaoCaoVstx, idNguoiTao, ngayTao, advText);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> searchVeSinhGiaDinh(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String thonXom,
+		java.lang.String trangThai, java.lang.String danhGiaKiemDem,
+		java.lang.String tkKiemDemVien, java.lang.String tkGiamSatVien,
+		java.lang.String ngayKiemDem, java.lang.String namBaoCao,
+		java.lang.String namBaoCaoVstx, java.lang.String idNguoiTao,
+		java.lang.String ngayTao, java.lang.String advText, int start, int end,
+		com.liferay.portal.kernel.util.OrderByComparator obc)
+		throws com.liferay.portal.kernel.exception.PortalException,
+			com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .searchVeSinhGiaDinh(maTinh, maHuyen, maXa, thonXom,
+			trangThai, danhGiaKiemDem, tkKiemDemVien, tkGiamSatVien,
+			ngayKiemDem, namBaoCao, namBaoCaoVstx, idNguoiTao, ngayTao,
+			advText, start, end, obc);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhMauNgauNhienOnlySVRaSoat(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String trangThai, java.lang.String namBaoCao,
+		java.lang.String namBaoCaoVstx, int start, int end)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhMauNgauNhienOnlySVRaSoat(maTinh, maHuyen,
+			maXa, loaiNhaTieuId, trangThai, namBaoCao, namBaoCaoVstx, start, end);
+	}
+
+	public static int countVeSinhGiaDinhMauNgauNhienOnlySVRaSoat(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String trangThai, java.lang.String namBaoCao,
+		java.lang.String namBaoCaoVstx)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .countVeSinhGiaDinhMauNgauNhienOnlySVRaSoat(maTinh, maHuyen,
+			maXa, loaiNhaTieuId, trangThai, namBaoCao, namBaoCaoVstx);
+	}
+
+	public static java.util.List<vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh> getVeSinhGiaDinhGroupByMaTinhBaoCaoHopNhatTU(
+		java.lang.String maTinh, java.lang.String maHuyen,
+		java.lang.String maXa, java.lang.String loaiNhaTieuId,
+		java.lang.String[] trangThai, int namBaoCao, int namToiThieu)
+		throws com.liferay.portal.kernel.exception.SystemException {
+		return getFinder()
+				   .getVeSinhGiaDinhGroupByMaTinhBaoCaoHopNhatTU(maTinh,
+			maHuyen, maXa, loaiNhaTieuId, trangThai, namBaoCao, namToiThieu);
+	}
+
+	public static VeSinhGiaDinhFinder getFinder() {
+		if (_finder == null) {
+			_finder = (VeSinhGiaDinhFinder)PortletBeanLocatorUtil.locate(vn.dtt.sol.ns.vesinhmoitruong.dao.service.ClpSerializer.getServletContextName(),
+					VeSinhGiaDinhFinder.class.getName());
+
+			ReferenceRegistry.registerReference(VeSinhGiaDinhFinderUtil.class,
+				"_finder");
+		}
+
+		return _finder;
+	}
+
+	public void setFinder(VeSinhGiaDinhFinder finder) {
+		_finder = finder;
+
+		ReferenceRegistry.registerReference(VeSinhGiaDinhFinderUtil.class,
+			"_finder");
+	}
+
+	private static VeSinhGiaDinhFinder _finder;
+}

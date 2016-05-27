@@ -1,0 +1,32 @@
+javax.portlet.title= Navigation Nuoc Sach
+javax.portlet.short-title= Menu
+javax.portlet.description= Menu
+
+nc-sach-tram-cap-nuoc = C\u00F4ng tr\u00ECnh c\u1EA5p n\u01B0\u1EDBc
+nc-sach-dau-noi-nuoc=\u0110\u1EA5u n\u1ED1i n\u01B0\u1EDBc
+nc-sach-kiem-dem-dau-noi-nuoc=Ki\u1EC3m \u0111\u1EBFm \u0111\u1EA5u n\u1ED1i n\u01B0\u1EDBc
+nc-sach-quan-ly-danh-gia-ben-vung=\u0110\u00E1nh gi\u00E1 cu\u1ED1i n\u0103m
+nc-sach-ke-hoach-dau-nam=K\u1EBF ho\u1EA1ch \u0111\u1EA7u n\u0103m
+
+nguoi-dung = Ng\u01B0\u1EDDi d\u00F9ng
+kiem-dem-vien = Ki\u1EC3m \u0111\u1EBFm vi\u00EAn
+danh-muc = Danh m\u1EE5c
+ve-sinh-ho-gia-dinh = V\u1EC7 sinh h\u1ED9 gia \u0111\u00ECnh
+ve-sinh-cong-trinh-cong-cong = C\u00F4ng tr\u00ECnh c\u00F4ng c\u1ED9ng
+kiem-dem-ve-sinh = Ki\u1EC3m \u0111\u1EBFm v\u1EC7 sinh
+ve-sinh-toan-xa = \u0110\u00E1nh gi\u00E1 cu\u1ED1i n\u0103m
+ke-hoach-dau-nam = K\u1EBF ho\u1EA1ch \u0111\u1EA7u n\u0103m
+lua-chon-mau-ngau-nhien = L\u1EF1a ch\u1ECDn m\u1EABu ng\u1EABu nhi\u00EAn
+
+bao-cao-dli-1-1 = B\u00E1o c\u00E1o DLI 1.1
+bao-cao-dli-1-2 = B\u00E1o c\u00E1o DLI 1.2
+bao-cao-dli-2-1 = B\u00E1o c\u00E1o DLI 2.1
+bao-cao-dli-2-2 = B\u00E1o c\u00E1o DLI 2.2
+bao-cao-dli-3 = B\u00E1o c\u00E1o DLI 3.1 & 3.2
+bao-cao-tong-hop = B\u00E1o c\u00E1o t\u1ED5ng h\u1EE3p
+bao-cao-dli-tien-o-thuc-hien-cap-nuoc-tap-trung=Ti\u1EBFn \u0111\u1ED9 th\u1EF1c hi\u1EC7n c\u1EA5p n\u01B0\u1EDBc t\u1EADp trung
+nc-sach-thong-ke-dau-noi-nuoc = Th\u1ED1ng k\u00EA \u0111\u1EA7u n\u1ED1i n\u01B0\u1EDBc
+tk-ve-sinh-nha-tieu-hvs = Th\u1ED1ng k\u00EA nh\u00E0 ti\u00EAu HVS
+tk-nguoi-tiep-can-nuoc-sach = Th\u1ED1ng k\u00EA s\u1ED1 ng\u01B0\u1EDDi TC CTBV
+tk-so-nguoi-tiep-can = Th\u1ED1ng k\u00EA s\u1ED1 ng\u01B0\u1EDDi TC VSATX
+

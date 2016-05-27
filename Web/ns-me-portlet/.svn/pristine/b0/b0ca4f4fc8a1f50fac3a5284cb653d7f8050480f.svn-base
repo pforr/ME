@@ -1,0 +1,17 @@
+package vn.dtt.sol.ns.reporting.model.baocaothongke.vstx;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+public class ThongKeVSTXExport {
+	private static Log log = LogFactoryUtil.getLog(ThongKeVSTXExport.class);
+	public static ThongKeVSTX getModel(String nam, String maTinh){
+		log.info("==START ThongKeVSTXExport Tinh=ThongKeVSTXExport===");
+		ThongKeVSTX result = new ThongKeVSTX();
+		
+		
+		
+		log.info("==END ThongKeVSTXExport Tinh=ThongKeVSTXExport===");
+		return result;
+	}
+}

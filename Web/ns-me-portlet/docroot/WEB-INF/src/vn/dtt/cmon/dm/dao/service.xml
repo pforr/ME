@@ -84,6 +84,11 @@
 		<finder name="ENTRY_NAME" return-type="Collection" >
 			<finder-column name="name" />
 		</finder>
+		
+		<finder name="DataGroupIdAndLevel" return-type="Collection" where="status = 1">
+			<finder-column name="dataGroupId" />
+			<finder-column name="level" />
+		</finder>
 	</entity>
 	
 	<entity name="NAVIGATION" table="DM_NAVIGATION" cache-enabled="false"

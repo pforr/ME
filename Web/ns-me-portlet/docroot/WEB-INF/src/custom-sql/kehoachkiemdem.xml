@@ -12,9 +12,6 @@
 			AND maxa = ?
 			AND (
 				TRANGTHAI = 0
-				OR TRANGTHAI = 3
-				OR TRANGTHAI = 4
-				OR TRANGTHAI = 8
 			)
 			AND [$NAMXAYDUNG_CLAUSE$] AND MAUNGAUNHIEN = ?
 		]]>
@@ -32,9 +29,6 @@
 			AND maxa = ?
 			AND (
 				TRANGTHAI = 0
-				OR TRANGTHAI = 3
-				OR TRANGTHAI = 4
-				OR TRANGTHAI = 8
 			)
 			AND [$NAMXAYDUNG_CLAUSE$] AND MAUNGAUNHIEN = ?
 		]]>

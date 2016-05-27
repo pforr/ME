@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhGiaDinhFinder.searchVeSinhGiaDinh">
+		<![CDATA[
+			SELECT 
+				DISTINCT me_vesinhgiadinh.* 
+			FROM 
+				me_vesinhgiadinh 
+			LEFT JOIN
+				me_thongtinkiemdemhogd
+			ON
+				me_vesinhgiadinh.id = me_thongtinkiemdemhogd.vesinhgiadinhid
+			LEFT JOIN
+				me_kiemdemvien
+			ON 
+				me_thongtinkiemdemhogd.taikhoan = me_kiemdemvien.TAIKHOAN
+			WHERE
+			1=1 
+			AND me_vesinhgiadinh.matinh = ?
+			AND me_vesinhgiadinh.mahuyen = ?
+			AND me_vesinhgiadinh.thonxom = ?
+			AND me_vesinhgiadinh.maxa = ? 
+			AND DATE(me_vesinhgiadinh.ngaytao) = ?
+			AND me_vesinhgiadinh.nambaocao = ?
+			AND me_vesinhgiadinh.idnguoitao = ? 
+			AND me_vesinhgiadinh.tenchuho LIKE ?
+			AND me_thongtinkiemdemhogd.daketthucdieutra = ? 
+			AND me_thongtinkiemdemhogd.danhgiakiemdem = ?
+			AND DATE(me_thongtinkiemdemhogd.ngaykiemdem) = ? 
+			AND me_kiemdemvien.TAIKHOAN = ?
+			AND me_vesinhgiadinh.trangThai = ?
+			ORDER BY me_thongtinkiemdemhogd.ngaykiemdem desc, me_thongtinkiemdemhogd.tenchuho asc
+		]]>
+	</sql>
+
+	<sql id="vn.dtt.sol.ns.vesinhmoitruong.dao.service.persistence.VeSinhGiaDinhFinder.searchCountVeSinhGiaDinh">
+		<![CDATA[
+			SELECT 
+				COUNT(DISTINCT me_vesinhgiadinh.id) AS COUNT_VALUE
+			FROM 
+				me_vesinhgiadinh 
+			LEFT JOIN
+				me_thongtinkiemdemhogd
+			ON
+				me_vesinhgiadinh.id = me_thongtinkiemdemhogd.vesinhgiadinhid
+			LEFT JOIN
+				me_kiemdemvien
+			ON 
+				me_thongtinkiemdemhogd.taikhoan = me_kiemdemvien.TAIKHOAN
+			WHERE
+			1=1 
+			AND me_vesinhgiadinh.matinh = ?
+			AND me_vesinhgiadinh.mahuyen = ?
+			AND me_vesinhgiadinh.thonxom = ?
+			AND me_vesinhgiadinh.maxa = ? 
+			AND DATE(me_vesinhgiadinh.ngaytao) = ?
+			AND me_vesinhgiadinh.nambaocao = ?
+			AND me_vesinhgiadinh.idnguoitao = ? 
+			AND me_vesinhgiadinh.tenchuho LIKE ?
+			AND me_thongtinkiemdemhogd.daketthucdieutra = ? 
+			AND me_thongtinkiemdemhogd.danhgiakiemdem = ?
+			AND DATE(me_thongtinkiemdemhogd.ngaykiemdem) = ? 
+			AND me_kiemdemvien.TAIKHOAN = ?
+			AND me_vesinhgiadinh.trangThai = ?
+		]]>
+	</sql>
+</custom-sql>

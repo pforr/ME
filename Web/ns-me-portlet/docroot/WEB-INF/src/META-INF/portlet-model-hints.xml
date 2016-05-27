@@ -293,6 +293,7 @@
 		<field name="loaiBaoCao" type="int" />
 		<field name="nguoiLap" type="String" />
 		<field name="nguoiDuyet" type="String" />
+		<field name="donViBaoCao" type="String" />
 		<field name="soBaoCao" type="String" />
 		<field name="ngayBaoCao" type="Date">
 			<hint name="show-time">false</hint>
@@ -300,8 +301,10 @@
 		<field name="trangThai" type="int" />
 		<field name="luuTruPDF1Id" type="long" />
 		<field name="luuTruPDF2Id" type="long" />
+		<field name="luuTruPDF3Id" type="long" />
 		<field name="luuTruCSV1Id" type="long" />
 		<field name="luuTruCSV2Id" type="long" />
+		<field name="luuTruCSV3Id" type="long" />
 		<field name="keHoachNam" type="String" />
 		<field name="ngayPheDuyet" type="Date" />
 		<field name="baoCaoChuongTrinh" type="String" />

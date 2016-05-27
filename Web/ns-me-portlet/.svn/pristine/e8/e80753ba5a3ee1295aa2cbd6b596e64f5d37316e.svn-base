@@ -1,0 +1,16 @@
+package vn.dtt.sol.ns.reporting.model.baocaothongke.daunoinuoc;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+public class ThongKeDauNoiNuocExport {
+	private static Log log = LogFactoryUtil.getLog(ThongKeDauNoiNuocExport.class);
+	public static ThongKeDauNoiNuoc getModel(String nam, String maTinh){
+		log.info("==START ThongKeDauNoiNuocExport Tinh=ThongKeDauNoiNuocExport===");
+		ThongKeDauNoiNuoc result = new ThongKeDauNoiNuoc();
+		
+		
+		log.info("==END ThongKeDauNoiNuocExport Tinh=ThongKeDauNoiNuocExport===");
+		return result;
+	}
+}

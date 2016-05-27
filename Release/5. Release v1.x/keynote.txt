@@ -1,0 +1,17 @@
+﻿---------------------------------------
+Các phần mềm sản phẩm cuối bao gồm
+---------------------------------------
+- ME Ver 1.1.21122015
+- ODV Ver 1.66
+- ODK Ver 1.664
+---------------------------------------
+Trong mỗi phiên bản bàn giao bao gồm 
+-------------------------------------
+1. ME bao gồm:
+- Môi trường chạy ứng dụng - server
+- Mã nguồn sản phẩm - Source
+- Cơ sở dữ liệu - SQL
+
+2. ODK mã nguồn ứng dụng điện thoại bao gồm 03 file được đóng gói
+
+3. ODV mã nguồn chức năng nhận đồng bộ phía server

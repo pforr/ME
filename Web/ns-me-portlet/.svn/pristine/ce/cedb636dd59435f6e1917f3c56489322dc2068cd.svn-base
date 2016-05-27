@@ -1,0 +1,120 @@
+
+package vn.dtt.sol.ns.reporting.model.dli22pl;
+
+import java.util.List;
+
+public class BaoCaoVSTX_PL5_4_1 {
+	
+	private String nam;
+	private String tenTinh;
+	private String baoCaoSo;
+	private List<DuLieuDong> lstDuLieuDong;
+	
+	public BaoCaoVSTX_PL5_4_1() {
+	}
+	
+	public BaoCaoVSTX_PL5_4_1(String nam, String tenTinh, String baoCaoSo, List<DuLieuDong> lstDuLieuDong) {
+		this.nam = nam;
+		this.tenTinh = tenTinh;
+		this.baoCaoSo = baoCaoSo;
+		this.lstDuLieuDong = lstDuLieuDong;
+	}
+	
+	public String getNam() {
+		return nam;
+	}
+	
+	public void setNam(String nam) {
+		this.nam = nam;
+	}
+	
+	public String getTenTinh() {
+		return tenTinh;
+	}
+	
+	public void setTenTinh(String tenTinh) {
+		this.tenTinh = tenTinh;
+	}
+	
+	public String getBaoCaoSo() {
+		return baoCaoSo;
+	}
+	
+	public void setBaoCaoSo(String baoCaoSo) {
+		this.baoCaoSo = baoCaoSo;
+	}
+	
+	public List<DuLieuDong> getLstDuLieuDong() {
+		return lstDuLieuDong;
+	}
+	
+	public void setLstDuLieuDong(List<DuLieuDong> lstDuLieuDong) {
+		this.lstDuLieuDong = lstDuLieuDong;
+	}
+	
+	public class DuLieuDong {
+		
+		private String stt;
+		private String name;
+		private String khongHvs;
+		private String hVS;
+		private String ghiChu;
+		
+		public DuLieuDong() {
+		}
+		
+		public DuLieuDong(String stt, String name, String khongHvs, String hVS, String ghiChu) {
+			this.stt = stt;
+			this.name = name;
+			this.khongHvs = khongHvs;
+			this.hVS = hVS;
+			this.ghiChu = ghiChu;
+		}
+		
+		public String getStt() {
+			return stt;
+		}
+		
+		public void setStt(String stt) {
+			this.stt = stt;
+		}
+		
+		public String getName() {
+			return name;
+		}
+		
+		public void setName(String name) {
+			this.name = name;
+		}
+		
+		public String getKhongHvs() {
+			return khongHvs;
+		}
+		
+		public void setKhongHvs(String khongHvs) {
+			this.khongHvs = khongHvs;
+		}
+		
+		public String gethVS() {
+			return hVS;
+		}
+		
+		public void sethVS(String hVS) {
+			this.hVS = hVS;
+		}
+		
+		public String getGhiChu() {
+			return ghiChu;
+		}
+		
+		public void setGhiChu(String ghiChu) {
+			this.ghiChu = ghiChu;
+		}
+		
+	}
+
+	public static BaoCaoVSTX_PL5_4_1 getModel(String namBaoCao) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

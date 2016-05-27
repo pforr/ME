@@ -1,0 +1,121 @@
+package vn.dtt.sol.ns.reporting.model.baocaothongke.daunoinuoc;
+
+import java.util.List;
+
+public class ThongKeDauNoiNuoc {
+	private String tenTinh;
+	private String nam;
+	private List<ThongKeDauNoiNuocDanhSach> lstThongKeDauNoiNuocDanhSach;
+	
+	public String getTenTinh() {
+		return tenTinh;
+	}
+
+
+	public void setTenTinh(String tenTinh) {
+		this.tenTinh = tenTinh;
+	}
+
+
+	public String getNam() {
+		return nam;
+	}
+
+
+	public void setNam(String nam) {
+		this.nam = nam;
+	}
+
+
+	public List<ThongKeDauNoiNuocDanhSach> getLstThongKeDauNoiNuocDanhSach() {
+		return lstThongKeDauNoiNuocDanhSach;
+	}
+
+
+	public void setLstThongKeDauNoiNuocDanhSach(
+			List<ThongKeDauNoiNuocDanhSach> lstThongKeDauNoiNuocDanhSach) {
+		this.lstThongKeDauNoiNuocDanhSach = lstThongKeDauNoiNuocDanhSach;
+	}
+
+
+	public class ThongKeDauNoiNuocDanhSach{
+		private String tramCap;
+		private String huyen;
+		private String xa;
+		private int soDauNoiTrongKeHoach;
+		private int soDauNoiDat;
+		private int soDauNoiKoDat;
+		private int soDauNoiKoCo;
+		private int soTongDaKetThucDieuTra;
+		private int soChuaKiemDem;
+		private int soDangKiemDem;
+		private int soTongDangDieuTra;
+		public String getTramCap() {
+			return tramCap;
+		}
+		public void setTramCap(String tramCap) {
+			this.tramCap = tramCap;
+		}
+		public String getHuyen() {
+			return huyen;
+		}
+		public void setHuyen(String huyen) {
+			this.huyen = huyen;
+		}
+		public String getXa() {
+			return xa;
+		}
+		public void setXa(String xa) {
+			this.xa = xa;
+		}
+		public int getSoDauNoiTrongKeHoach() {
+			return soDauNoiTrongKeHoach;
+		}
+		public void setSoDauNoiTrongKeHoach(int soDauNoiTrongKeHoach) {
+			this.soDauNoiTrongKeHoach = soDauNoiTrongKeHoach;
+		}
+		public int getSoDauNoiDat() {
+			return soDauNoiDat;
+		}
+		public void setSoDauNoiDat(int soDauNoiDat) {
+			this.soDauNoiDat = soDauNoiDat;
+		}
+		public int getSoDauNoiKoDat() {
+			return soDauNoiKoDat;
+		}
+		public void setSoDauNoiKoDat(int soDauNoiKoDat) {
+			this.soDauNoiKoDat = soDauNoiKoDat;
+		}
+		public int getSoDauNoiKoCo() {
+			return soDauNoiKoCo;
+		}
+		public void setSoDauNoiKoCo(int soDauNoiKoCo) {
+			this.soDauNoiKoCo = soDauNoiKoCo;
+		}
+		public int getSoTongDaKetThucDieuTra() {
+			return soTongDaKetThucDieuTra;
+		}
+		public void setSoTongDaKetThucDieuTra(int soTongDaKetThucDieuTra) {
+			this.soTongDaKetThucDieuTra = soTongDaKetThucDieuTra;
+		}
+		public int getSoChuaKiemDem() {
+			return soChuaKiemDem;
+		}
+		public void setSoChuaKiemDem(int soChuaKiemDem) {
+			this.soChuaKiemDem = soChuaKiemDem;
+		}
+		public int getSoDangKiemDem() {
+			return soDangKiemDem;
+		}
+		public void setSoDangKiemDem(int soDangKiemDem) {
+			this.soDangKiemDem = soDangKiemDem;
+		}
+		public int getSoTongDangDieuTra() {
+			return soTongDangDieuTra;
+		}
+		public void setSoTongDangDieuTra(int soTongDangDieuTra) {
+			this.soTongDangDieuTra = soTongDangDieuTra;
+		}
+		
+	}
+}

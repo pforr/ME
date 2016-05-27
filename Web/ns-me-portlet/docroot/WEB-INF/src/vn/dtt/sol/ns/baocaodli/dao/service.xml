@@ -12,17 +12,20 @@
 		<column name="loaiBaoCao" db-name="LOAIBAOCAO" type="int" />
 		<column name="nguoiLap" db-name="NGUOILAP" type="String" />
 		<column name="nguoiDuyet" db-name="NGUOIDUYET" type="String" />
+		<column name="donViBaoCao" db-name="DONVIBAOCAO" type="String" />
 		<column name="soBaoCao" db-name="SOBAOCAO" type="String" />
 		<column name="ngayBaoCao" db-name="NGAYBAOCAO" type="Date" />
 		<column name="trangThai" db-name="TRANGTHAI" type="int" />
 		<column name="luuTruPDF1Id" db-name="LUUTRUPDF_1" type="long" />
-		<column name="luuTruPDF2Id" db-name="LUUTRUPDF_2" type="long" />
+		<column name="luuTruPDF2Id" db-name="LUUTRUPDF_2" type="long" />	
+		<column name="luuTruPDF3Id" db-name="LUUTRUPDF_3" type="long" />	
 		<column name="luuTruCSV1Id" db-name="LUUTRUCSV_1" type="long" />
-		<column name="luuTruCSV2Id" db-name="LUUTRUCSV_2" type="long" />
-		<column name="keHoachNam" type="String"/>
-		<column name="ngayPheDuyet" type="Date"/>
-		<column name="baoCaoChuongTrinh" type="String"/>
-		<column name="ngayDang" type="Date"/>
+		<column name="luuTruCSV2Id" db-name="LUUTRUCSV_2" type="long" />	
+		<column name="luuTruCSV3Id" db-name="LUUTRUCSV_3" type="long" />	
+		<column name="keHoachNam" db-name="KEHOACHNAM" type="String"/>
+		<column name="ngayPheDuyet" db-name="NGAYPHEDUYET" type="Date"/>
+		<column name="baoCaoChuongTrinh" db-name="BAOCAOCHUONGTRINH" type="String"/>
+		<column name="ngayDang" db-name="NGAYDANG" type="Date"/>
 		
 		<!-- Order -->
 
@@ -106,6 +109,7 @@
 	
 	<exceptions>
 		<exception>NamBaoCao</exception>
+		<exception>DonViBaoCao</exception>
 		<exception>SoBaoCao</exception>
 		<exception>NgayBaoCao</exception>
 		<exception>NguoiLap</exception>

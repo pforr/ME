@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.kehoachvesinh.dao.service.persistence.KeHoachVeSinhFinder.finderVeSinhHGD">
+		<![CDATA[
+			SELECT
+				*
+			FROM
+				me_vesinhgiadinh
+			WHERE
+			MATINH = ?
+			AND MAHUYEN = ?
+			AND maxa = ?
+			AND (
+				TRANGTHAI = 0
+			)
+			AND [$NAMXAYDUNG_CLAUSE$] AND MAUNGAUNHIEN = ?
+		]]>
+	</sql>
+<!-- 				OR TRANGTHAI = 3
+				OR TRANGTHAI = 4
+				OR TRANGTHAI = 8
+ -->	
+	
+	<sql id="vn.dtt.sol.ns.kehoachvesinh.dao.service.persistence.KeHoachVeSinhFinder.countVeSinhHGD">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE 
+			FROM
+				me_vesinhgiadinh
+			WHERE
+			MATINH = ?
+			AND MAHUYEN = ?
+			AND maxa = ?
+			AND (
+				TRANGTHAI = 0
+			)
+			AND [$NAMXAYDUNG_CLAUSE$] AND MAUNGAUNHIEN = ?
+		]]>
+	</sql>
+	
+</custom-sql>

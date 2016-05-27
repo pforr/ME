@@ -23,6 +23,8 @@
 			[$DATE_NGAYKIEMDEM$]
 			AND me_daunoinuoc.NAMBAOCAO = ?
 			AND me_daunoinuoc.IDNGUOITAO = ?
+			ORDER BY
+				me_daunoinuoc.MATINH, me_daunoinuoc.MAHUYEN, me_daunoinuoc.MAXA, me_daunoinuoc.THONXOM,me_daunoinuoc.TRAMCAPNUOCID,me_daunoinuoc.TENCHUHO ASC
 		]]>
 	</sql>
 	

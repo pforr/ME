@@ -1,0 +1,384 @@
+package vn.dtt.sol.ns.portlet;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.portlet.ActionRequest;
+import javax.portlet.ActionResponse;
+import javax.portlet.PortletContext;
+import javax.portlet.PortletException;
+import javax.portlet.RenderRequest;
+import javax.portlet.RenderResponse;
+import javax.portlet.ResourceRequest;
+import javax.portlet.ResourceResponse;
+
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartUtilities;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+
+import vn.dtt.sol.ns.baocaodli.business.BaoCaoDLITongHopBusiness;
+import vn.dtt.sol.ns.business.KeHoachNuocSachBusiness;
+import vn.dtt.sol.ns.business.KeHoachVeSinhBusiness;
+import vn.dtt.sol.ns.danhgiavesinh.business.DANHGIAVESINHXABusiness;
+import vn.dtt.sol.ns.danhgiavesinh.dao.model.DANHGIAVESINHXA;
+import vn.dtt.sol.ns.reporting.model.dlith.TomTatTDTHCSGiaiNgan;
+import vn.dtt.sol.ns.reporting.utils.ReportBusinessUtils;
+import vn.dtt.sol.ns.tramcap.business.DauNoiNuocBusiness;
+import vn.dtt.sol.ns.tramcap.business.TramCapBusiness;
+import vn.dtt.sol.ns.tramcap.dao.model.DauNoiNuoc;
+import vn.dtt.sol.ns.tramcap.dao.model.TramCapNuoc;
+import vn.dtt.sol.ns.util.NuocSachUtils;
+import vn.dtt.sol.ns.util.WebKeys;
+import vn.dtt.sol.ns.util.format.ConvertUtil;
+import vn.dtt.sol.ns.util.format.FormatData;
+import vn.dtt.sol.ns.vesinhmoitruong.business.VeSinhGiaDinhBusiness;
+import vn.dtt.sol.ns.vesinhmoitruong.dao.model.VeSinhGiaDinh;
+
+import com.liferay.portal.kernel.language.LanguageUtil;
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+import com.liferay.portal.kernel.util.ParamUtil;
+import com.liferay.portal.kernel.util.Validator;
+import com.liferay.portal.theme.ThemeDisplay;
+import com.liferay.util.bridges.mvc.MVCPortlet;
+import com.liferay.util.portlet.PortletProps;
+
+public class DashboardPortlet extends MVCPortlet {
+
+	public void processAction(ActionRequest request, ActionResponse response)
+			throws IOException, PortletException {
+		// create dataset Object
+		// DefaultPieDataset dataset = createPieDataSet(request, response);
+		// DefaultPieDataset dataset1 = createPieDataSet(request, response);
+		// DefaultPieDataset dataset2 = createRingDataSet(request, response);
+		// create chart
+		// generateChart(request, response, dataset);
+		// generateChart(request, response, dataset1);
+		response.setRenderParameter("jspPage",
+				"/html/portlet/dashboard/view.jsp");
+
+	}
+
+	@Override
+	public void doView(RenderRequest renderRequest,
+			RenderResponse renderResponse) throws IOException, PortletException {
+		
+		super.doView(renderRequest, renderResponse);
+	}
+
+	@Override
+	public void render(RenderRequest request, RenderResponse response)
+			throws PortletException, IOException {
+		// get running server path
+		String currentTimeFull = FormatData.getCurrentTimeFull();
+		ThemeDisplay themeDisplay = (ThemeDisplay) request.getAttribute(WebKeys.THEME_DISPLAY);
+		PortletContext context = request.getPortletSession().getPortletContext();
+		String path = context.getRealPath("/images");
+		int namValueInt = ParamUtil.getInteger(request, "namBaoCao");
+		int namToiThieu = namValueInt;
+		
+		boolean isTrungUong = ParamUtil.getBoolean(request, "isTrungUong");
+		String maTinh = ParamUtil.getString(request, "maTinh");
+		
+		
+		_log.info("doView " + namValueInt);
+		int SoDauNoiKHValue = 0;
+		int SoDauNoiKQDDValue = 0;
+
+		int SoNhaTieuHGDXayMoiKHValue = 0;
+		int SoNhaTieuHGDXayMoiKQDDValue = 0;
+
+		int SoNgHgLoiTuCapNcBenVungKHValue = 0;
+		int SoNgHgLoiTuCapNcBenVungKQDDValue = 0;
+
+		int SoNgHgLoiTuVSTXKHValue = 0;
+		int SoNgHgLoiTuVSTXKQDDValue = 0;
+		
+//		String SoKHCuaTinhDcPheDuyetKHValue = "";
+//		String SoKHCuaTinhDcPheDuyetKQDDValue = "";
+//
+//		String SoBCCTDcCongBoKHValue = "";
+//		String SoBCCTDcCongBoKQDDValue = "";
+		String DANGKYVSTX = "1"; // 1 la co dang ky vstx
+
+		// 1 1.1
+		SoDauNoiKHValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh,namValueInt, namToiThieu, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0);
+		SoDauNoiKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh,namValueInt, namToiThieu, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0, 0);
+
+		// 2 1.2
+		SoNhaTieuHGDXayMoiKHValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh,namValueInt, namToiThieu, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0,0, 0);
+		SoNhaTieuHGDXayMoiKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh,namValueInt, namToiThieu, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0,0, 0);
+		// 3 2.1
+		SoNgHgLoiTuCapNcBenVungKHValue = KeHoachNuocSachBusiness.sumSoNguoiHuongLoiCapNcBenVungBaoCaoHopNhat(maTinh, namValueInt,namToiThieu);
+		SoNgHgLoiTuCapNcBenVungKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh,namValueInt, namToiThieu, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0,	0, 0);
+		// 4 2.2
+		SoNgHgLoiTuVSTXKHValue = KeHoachVeSinhBusiness.sumSoDanHuongLoiBaoCaoHopNhat(maTinh, namValueInt, namToiThieu,DANGKYVSTX);
+		SoNgHgLoiTuVSTXKQDDValue = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh,namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,0, 0);
+		/*
+		// 5 3.1
+		SoKHCuaTinhDcPheDuyetKHValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh, namValueInt, namToiThieu, 0, 0, 0, 0, 0,0, 0, 0, 1, 0, 0, 0));
+		SoKHCuaTinhDcPheDuyetKQDDValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(
+				maTinh, namValueInt, namToiThieu, 0, 0, 0, 0, 0,0, 0, 0, 0, 1, 0, 0));
+		// 6 3.2
+		SoBCCTDcCongBoKHValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh, namValueInt, namToiThieu, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 1, 0));
+		SoBCCTDcCongBoKQDDValue = ConvertUtil.parseIntToString1000(BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(maTinh, namValueInt, namToiThieu, 0, 0, 0, 0, 0,0, 0, 0, 0, 0, 0, 1));
+		*/
+		final String KeHoach = LanguageUtil.get(getPortletConfig(),themeDisplay.getLocale(), "ke-hoach");
+		final String ThucHien = LanguageUtil.get(getPortletConfig(),themeDisplay.getLocale(), "thuc-hien");
+		
+		String imgDLI11 = "dli11"+maTinh+""+currentTimeFull+".jpg";
+		String imgDLI12 = "dli12"+maTinh+""+currentTimeFull+".jpg";
+		String imgDLI21 = "dli21"+maTinh+""+currentTimeFull+".jpg";
+		String imgDLI22 = "dli22"+maTinh+""+currentTimeFull+".jpg";
+		
+		final DefaultCategoryDataset dl11 = new DefaultCategoryDataset();
+		dl11.addValue(SoDauNoiKHValue, KeHoach, KeHoach);
+		dl11.addValue(SoDauNoiKQDDValue, ThucHien, ThucHien);
+		JFreeChart barChart = ChartFactory.createBarChart3D("DLI 1.1 ("+ percent(SoDauNoiKQDDValue, SoDauNoiKHValue) + ")", "DLI 1.1","", dl11, PlotOrientation.VERTICAL, true, true, false);
+		
+
+		// create a JPG image of saleschart
+		ChartUtilities.saveChartAsJPEG(new File(path +"/"+ imgDLI11), barChart,200, 300);
+
+		final DefaultCategoryDataset dl12 = new DefaultCategoryDataset();
+		dl12.addValue(SoNhaTieuHGDXayMoiKHValue, KeHoach, KeHoach);
+		dl12.addValue(SoNhaTieuHGDXayMoiKQDDValue, ThucHien, ThucHien);
+		JFreeChart barChart12 = ChartFactory.createBarChart3D("DLI 1.2 ("+ percent(SoNhaTieuHGDXayMoiKQDDValue,SoNhaTieuHGDXayMoiKHValue) + ")", "DLI 1.2","", dl12, PlotOrientation.VERTICAL, true, true, false);
+		
+		// create a JPG image of saleschart
+		ChartUtilities.saveChartAsJPEG(new File(path +"/"+ imgDLI12),barChart12, 200, 300);
+
+		final DefaultCategoryDataset dl21 = new DefaultCategoryDataset();
+		dl21.addValue(SoNgHgLoiTuCapNcBenVungKHValue, KeHoach, KeHoach);
+		dl21.addValue(SoNgHgLoiTuVSTXKQDDValue, ThucHien, ThucHien);
+		JFreeChart barChart21 = ChartFactory.createBarChart3D("DLI 2.1 ("+ percent(SoNgHgLoiTuCapNcBenVungKQDDValue,SoNgHgLoiTuCapNcBenVungKHValue) + ")","DLI 2.1", "", dl21, PlotOrientation.VERTICAL, true, true,false);
+		// create a JPG image of saleschart
+		ChartUtilities.saveChartAsJPEG(new File(path +"/"+ imgDLI21),barChart21, 200, 300);
+
+		final DefaultCategoryDataset dl22 = new DefaultCategoryDataset();
+		dl22.addValue(SoNgHgLoiTuVSTXKHValue, KeHoach, KeHoach);
+		dl22.addValue(SoNgHgLoiTuVSTXKQDDValue, ThucHien, ThucHien);
+		JFreeChart barChart22 = ChartFactory.createBarChart3D("DLI 2.2 ("+ percent(SoNgHgLoiTuVSTXKQDDValue, SoNgHgLoiTuVSTXKHValue)+ ")", "DLI 2.2", "", dl22, PlotOrientation.VERTICAL, true,true, false);
+		// create a JPG image of saleschart
+		ChartUtilities.saveChartAsJPEG(new File(path +"/"+ imgDLI22),barChart22, 200, 300);
+		
+		
+		// tra lai ket qua hien thi % ben canh
+		// dli 1.1
+		List<TomTatTDTHCSGiaiNgan> lstDLI11 = new ArrayList<TomTatTDTHCSGiaiNgan>();
+		List<DauNoiNuoc> lstDauNoiNuoc = DauNoiNuocBusiness.getDauNoiDLI11ChiTiet(maTinh, null, null, null, String.valueOf(namValueInt), null);
+		for (DauNoiNuoc dauNoiNuoc : lstDauNoiNuoc) {
+			TomTatTDTHCSGiaiNgan chiSoDLi11 = new TomTatTDTHCSGiaiNgan();
+			
+			String tenTinh = NuocSachUtils.getNameTinh(dauNoiNuoc.getMaTinh());
+			int SoDauNoiKHTemp = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(dauNoiNuoc.getMaTinh(),namValueInt, namToiThieu, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0,0, 0);
+			int SoDauNoiKQDDTemp = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(dauNoiNuoc.getMaTinh(),namValueInt, namToiThieu, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0,0, 0);
+			String soDauNoiPercent = percent(SoDauNoiKQDDTemp, SoDauNoiKHTemp);
+			
+			chiSoDLi11.setMaTinh(dauNoiNuoc.getMaTinh());
+			chiSoDLi11.setTenTinh(tenTinh);
+			chiSoDLi11.setSoDauNoiThucHienKH(soDauNoiPercent);
+			
+			lstDLI11.add(chiSoDLi11);
+		}
+		
+		// dli 1.2
+		String[] DANHGIAKIEMDEMCHOT = {"1"};// 1 la thong tin kiem dem danh gia nha tieu hvs xay moi
+		List<TomTatTDTHCSGiaiNgan> lstDLI12 = new ArrayList<TomTatTDTHCSGiaiNgan>();
+		List<VeSinhGiaDinh> lstVeSinhGiaDinhXM = VeSinhGiaDinhBusiness.getVeSinhGiaDinhGroupByMaTinhBaoCaoHopNhatTU(maTinh, null, null, null, DANHGIAKIEMDEMCHOT, namValueInt, namToiThieu);
+		for (VeSinhGiaDinh veSinhGiaDinh : lstVeSinhGiaDinhXM) {
+			TomTatTDTHCSGiaiNgan chiSoDLi12 = new TomTatTDTHCSGiaiNgan();
+			
+			String tenTinh = NuocSachUtils.getNameTinh(veSinhGiaDinh.getMaTinh());
+			int SoNhaTieuHGDXayMoiKHTemp = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(veSinhGiaDinh.getMaTinh(),namValueInt, namToiThieu, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+			int SoNhaTieuHGDXayMoiKQDDTemp = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(veSinhGiaDinh.getMaTinh(),namValueInt, namToiThieu, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0);
+			String soNhaTieuHVSXMPercent = percent(SoNhaTieuHGDXayMoiKQDDTemp, SoNhaTieuHGDXayMoiKHTemp);
+			
+			chiSoDLi12.setMaTinh(veSinhGiaDinh.getMaTinh());
+			chiSoDLi12.setTenTinh(tenTinh);
+			chiSoDLi12.setSoNhaTieuHGDXayMoiThucHienKH(soNhaTieuHVSXMPercent);
+			
+			lstDLI12.add(chiSoDLi12);
+		}
+		// dli 2.1
+		String KETQUADANHGIA = "1";//1 la danh gia tram do ben vung
+		List<TomTatTDTHCSGiaiNgan> lstDLI21 = new ArrayList<TomTatTDTHCSGiaiNgan>();
+		List<TramCapNuoc> lstTramCapNuoc = TramCapBusiness.getTramCapJoinDanhGiaBenVungGroupByMaTinhTW(maTinh,String.valueOf(namValueInt), null);
+		for (TramCapNuoc tramCapNuoc : lstTramCapNuoc) {
+			TomTatTDTHCSGiaiNgan chiSoDLi21 = new TomTatTDTHCSGiaiNgan();
+			
+			String tenTinh = NuocSachUtils.getNameTinh(tramCapNuoc.getMaTinh());
+			
+			int SoNgHgLoiTuCapNcBenVungKHTemp = KeHoachNuocSachBusiness.sumSoNguoiHuongLoiCapNcBenVungBaoCaoHopNhat(tramCapNuoc.getMaTinh(), namValueInt,namToiThieu);
+			int SoNgHgLoiTuCapNcBenVungKQDDTemp = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(tramCapNuoc.getMaTinh(),namValueInt, namToiThieu, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0);
+			String soNgHgLoiTuCapNcBenVungPercent = percent(SoNgHgLoiTuCapNcBenVungKQDDTemp, SoNgHgLoiTuCapNcBenVungKHTemp);
+			
+			chiSoDLi21.setMaTinh(tramCapNuoc.getMaTinh());
+			chiSoDLi21.setTenTinh(tenTinh);
+			chiSoDLi21.setSoNgHgLoiTuCapNcBenVungThucHienKH(soNgHgLoiTuCapNcBenVungPercent);
+			lstDLI21.add(chiSoDLi21);
+		}
+		
+		// dli 2.2
+		List<TomTatTDTHCSGiaiNgan> lstDLI22 = new ArrayList<TomTatTDTHCSGiaiNgan>();
+		List<DANHGIAVESINHXA> lstDanhgiavesinhxa = DANHGIAVESINHXABusiness.getDanhGiaVeSinhXaGroupByMaTinhTW(maTinh, null, null, String.valueOf(namValueInt),null);
+		for (DANHGIAVESINHXA danhgiavesinhxa : lstDanhgiavesinhxa) {
+			TomTatTDTHCSGiaiNgan chiSoDLi22 = new TomTatTDTHCSGiaiNgan();
+			String tenTinh = NuocSachUtils.getNameTinh(danhgiavesinhxa.getMaTinh());
+			
+			int SoNgHgLoiTuVSTXKHTemp = KeHoachVeSinhBusiness.sumSoDanHuongLoiBaoCaoHopNhat(danhgiavesinhxa.getMaTinh(), namValueInt, namToiThieu,DANGKYVSTX);
+			int SoNgHgLoiTuVSTXKQDDTemp = BaoCaoDLITongHopBusiness.sumBaoCaoDLITongHopByMaTinhNamGiaiDoanTuBaoCaoHopNhat(danhgiavesinhxa.getMaTinh(),namValueInt, namToiThieu, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0,0, 0);
+			String soNgHgLoiVSTXPercent = percent(SoNgHgLoiTuVSTXKQDDTemp, SoNgHgLoiTuVSTXKHTemp);
+			
+			chiSoDLi22.setMaTinh(danhgiavesinhxa.getMaTinh());
+			chiSoDLi22.setTenTinh(tenTinh);
+			chiSoDLi22.setSoNgHgLoiTuVSTXThucHienKH(soNgHgLoiVSTXPercent);
+			lstDLI22.add(chiSoDLi22);
+		}
+		// 4 2.2
+				
+		request.setAttribute("imgDLI11", imgDLI11);
+		request.setAttribute("imgDLI12", imgDLI12);
+		request.setAttribute("imgDLI21", imgDLI21);
+		request.setAttribute("imgDLI22", imgDLI22);
+		
+		request.setAttribute("lstDLI11", lstDLI11);
+		request.setAttribute("lstDLI12", lstDLI12);
+		request.setAttribute("lstDLI21", lstDLI21);
+		request.setAttribute("lstDLI22", lstDLI22);
+		super.render(request, response);
+
+	}
+
+	public String percent(int n, int v) {
+		String result = "0%";
+		if (v > 0) {
+			double _percent = (n / (v * 1.0f)) * 100;
+			
+			result = ConvertUtil.parseDoubleToString2Digits(_percent)+"%";
+		}
+
+		return result;
+	}
+	@Override
+	public void serveResource(ResourceRequest resourceRequest,
+			ResourceResponse resourceResponse) throws IOException,
+			PortletException {
+		_log.info("--DashboardPortlet--serveResource---vao inbaocao");
+		ReportBusinessUtils.inBaoCaoDLI(resourceRequest,resourceResponse);
+		//super.serveResource(resourceRequest, resourceResponse);
+	}
+
+	public void piechart(ActionRequest request, ActionResponse response) {
+
+		try {
+			// get running server path
+			PortletContext context = request.getPortletSession()
+					.getPortletContext();
+			String path = context.getRealPath("/images");
+
+			final String fiat = "FIAT";
+			final String audi = "AUDI";
+			final String ford = "FORD";
+			final String speed = "Speed";
+			final String millage = "Millage";
+			final String userrating = "User Rating";
+			final String safety = "safety";
+
+			final DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
+			dataset.addValue(1.0, fiat, speed);
+			dataset.addValue(3.0, fiat, userrating);
+			dataset.addValue(5.0, fiat, millage);
+			dataset.addValue(5.0, fiat, safety);
+
+			dataset.addValue(5.0, audi, speed);
+			dataset.addValue(6.0, audi, userrating);
+			dataset.addValue(10.0, audi, millage);
+			dataset.addValue(4.0, audi, safety);
+
+			dataset.addValue(4.0, ford, speed);
+			dataset.addValue(2.0, ford, userrating);
+			dataset.addValue(3.0, ford, millage);
+			dataset.addValue(6.0, ford, safety);
+
+			JFreeChart barChart = ChartFactory.createBarChart(
+					"CAR USAGE STATIStICS", "Category", "Score", dataset,
+					PlotOrientation.VERTICAL, true, true, false);
+
+
+			// create a JPG image of saleschart
+			ChartUtilities.saveChartAsJPEG(
+					new File(path + "/salespiechart.jpg"), barChart, 300, 300);
+			// create a JPG image of Bookings
+			// ChartUtilities.saveChartAsJPEG(new File(path +
+			// "/bookingspiechart.jpg"), chart1, 300, 300);
+
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+
+	public DefaultPieDataset createPieDataSet(ActionRequest request,
+			ActionResponse response) throws IOException, PortletException {
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		String high = PortletProps.get("high");
+		String s = PortletProps.get("text");
+		String low = PortletProps.get("low");
+		String avg = PortletProps.get("avg");
+		String highValue = PortletProps.get("highvalue");
+		double hValue = Double.parseDouble(highValue);
+		String sValue = PortletProps.get("textvalue");
+		double sValue1 = Double.parseDouble(sValue);
+		String lowValue = PortletProps.get("lowvalue");
+		double lValue = Double.parseDouble(lowValue);
+		String avgValue = PortletProps.get("avgvalue");
+		double aValue = Double.parseDouble(avgValue);
+		dataset.setValue(high, hValue);
+		dataset.setValue(s, sValue1);
+		dataset.setValue(low, lValue);
+		dataset.setValue(avg, aValue);
+		dataset.setValue("High", 25.0);
+		dataset.setValue("", 25.0);
+		dataset.setValue("Low", 25.0);
+		dataset.setValue("Avg", 25.0);
+		return dataset;
+	}
+
+	public DefaultCategoryDataset createCategoryDataSet() {
+		// create category dataset object
+		DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+		// set the category dataset values
+		dataset.setValue(1, "Avg", new Integer(50));
+		dataset.setValue(3, "", new Integer(50));
+		dataset.setValue(4, "High", new Integer(50));
+		dataset.setValue(6, "Low", new Integer(50));
+		return dataset;
+	}
+
+	public DefaultPieDataset createRingDataSet(ActionRequest request,
+			ActionResponse response) {
+		// create ring dataset object
+		DefaultPieDataset dataset = new DefaultPieDataset();
+		// set the ring dataset values
+		dataset.setValue("0", 10.0);
+		dataset.setValue("10", 10.0);
+		dataset.setValue("20", 10.0);
+		dataset.setValue("30", 10.0);
+		dataset.setValue("40", 10.0);
+		dataset.setValue("50", 10.0);
+		dataset.setValue("60", 10.0);
+		dataset.setValue("70", 10.0);
+		dataset.setValue("80", 10.0);
+		dataset.setValue("90", 10.0);
+		dataset.setValue("100", 10.0);
+		return dataset;
+	}
+	private static final Log _log = LogFactoryUtil.getLog(DashboardPortlet.class);
+}

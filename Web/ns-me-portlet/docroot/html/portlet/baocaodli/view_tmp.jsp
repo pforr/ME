@@ -21,7 +21,7 @@
 %>
 
 <c:choose>
-	<c:when test="<%= typeDLI == 6 %>">
+	<c:when test="<%= typeDLI == BaoCaoDLIConstants.BAO_CAO_DLI_TH %>">
 		<liferay-util:include page="/html/portlet/baocaodli/view_dli_th.jsp" servletContext="<%= application %>" />
 	</c:when>
 	<c:otherwise>

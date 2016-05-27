@@ -1,0 +1,300 @@
+javax.portlet.title= Sanitation facility
+javax.portlet.short-title= Sanitation facility
+javax.portlet.description= Sanitation facility
+#message
+success.addHoGiaDinh=Add new household latrine successfully
+success.editHoGiaDinh=Update household latrine successfully
+success.xoaHoGiaDinh=Delete household latrine successfully
+success.importHoGiaDinh Import household latrine from file successfully
+error.addHoGiaDinh=Add new household latrine unsuccessfully
+error.editHoGiaDinh=Update household latrine unsuccessfully
+error.xoaHoGiaDinh=Delete household latrine unsuccessfully
+error.importHoGiaDinh Import household latrine from file unsuccessfully
+
+#Search Container
+showing-x-result = Showing {0} } result.
+showing-x-results = Showing {0} } result.
+showing-x-x-of-x-results = Showing {0} - {1} of {2} result.
+showing-x-x = Showing {0} - {1}.
+items-per-page = Items per page
+previous = Previous page
+next = Next page
+first = First
+last = Last
+page = Page
+of = of
+cp-page=Page
+
+-chon-=--Select--
+-chon-tat-ca-=--Select all--
+tinh-thanh-pho=Province/City
+quan-huyen=District/Ward
+phuong-xa=Precinct/commune
+thang-thai=Status
+nam-bao-cao=Year under review
+tim-kiem=Search
+ 
+import-tu-excel=Import from excel\n
+thon-xom=Village/Hamlet
+ten-chu-ho=Household name
+thao-tac=Operation
+them-vs-cong-trinh=Add facility
+xem-vs-cong-trinh=See facility
+edit-vs-cong-trinh=Update facility
+xoa-vs-cong-trinh=Delete facility
+add-vs-cong-trinh=Add new facility
+dc-thon-xom=Village/Hamlet/Group
+so-nguoi-trong-ho=Number of people in the household
+hien-trang-truoc-khi-xay=Status before construction
+thang-xay-dung=Month of construction
+nam-xay-dung=Year of construction
+gioi-tinh=Gender
+nam=Male
+nu=Female
+thanh-phan-ho-gia-dinh=Household background
+loai-nha-tieu=Type of latrine
+tinh-trang-bao-cao=Year under review
+nam-xay-dung-0=--Select--
+ghi-chu=Note
+luu=Save
+cus-required=required to import
+vs-ho-gia-dinh=Household latrine
+ho-gia-dinh=Household information
+kiem-dem=Enumeration information
+kinh-do=Longitude ( east)
+vi-do=Latitude ( North)
+thong-tin-danh-gia-dieu-tra=Information of Enumeration Evaluation
+nha-tieu-hop-vs=hygienic latrine
+ngay-kiem-dem=Date of enumeration
+nguoi-kiem-dem=Enumerator
+ket-qua-danh-gia=Evaluation result
+ngay-danh-gia=Date of evaluation
+nguoi-danh-gia=Supervisor
+danh-gia-lai=Re-evaluation
+nam-hoan-thanh=Year of completion
+danh-gia-lai-nha-vs-ho-gd=Revaluation of household latrine
+cap-nhat-danh-gia=Update evaluation
+ten-cong-trinh=Latrine
+loai-cong-trinh=Type of facility
+loai-cong-trinh-1=School
+loai-cong-trinh-2=Medical station
+
+dc-cong-trinh=Address of facility
+nha-tieu-hvs=hygienic latrine
+nha-tieu-hvs-1=Yes
+nha-tieu-hvs-2=No
+loai-nguon-nuoc=Type of water source
+nguon-nuoc-hvs=Hygienic water source
+nguon-nuoc-hvs-1=Yes
+nguon-nuoc-hvs-2=No
+vs-cong-trinh=Sanitation facility
+cong-trinh=Facility
+kiem-dem Enumeration
+dia-chi=Village/Hamlet/Group
+dau_noi=Information of facility
+kiem_dem=Information of enumeration
+no-danh-gia-were-found=Data not found
+
+
+#data
+tinh-trang-ve-sinh-0=No result
+tinh-trang-ve-sinh-1=Result of enumeration
+tinh-trang-ve-sinh-2=Enumeration completed
+tinh-trang-ve-sinh-3=Enumeration not completed
+tinh-trang-ve-sinh-4=No latrine
+tinh-trang-ve-sinh-8=cancelled
+nam-bao-cao-0=unreported
+nam-bao-cao-2013=Till 2013
+nam-bao-cao-2014=2014
+nam-bao-cao-2015=2015
+
+co-nha-tieu-hvs-1=No latrine
+co-nha-tieu-hvs-2=yes, but unhygienic latrine
+co-nha-tieu-hvs-3=Hygienic latrine
+
+thang-xay-dung-0=--Select--
+thang-xay-dung-1=January
+thang-xay-dung-2=February
+thang-xay-dung-3=March
+thang-xay-dung-4=April
+thang-xay-dung-5=May
+thang-xay-dung-6=June
+thang-xay-dung-7=July
+thang-xay-dung-8=August
+thang-xay-dung-9=September
+thang-xay-dung-10=October
+thang-xay-dung-11=November
+thang-xay-dung-12=December
+
+thanh-phan-ho-gia-dinh-1=Poor
+thanh-phan-ho-gia-dinh-2=Near poor
+thanh-phan-ho-gia-dinh-3=Not poor
+nha-tieu-hop-ve-sinh-0=
+nha-tieu-hop-ve-sinh-1=Yes
+nha-tieu-hop-ve-sinh-2=No
+
+
+
+
+
+
+danh-gia-kiem-dem-=
+danh-gia-kiem-dem-0=No result
+danh-gia-kiem-dem-1=Enumeration completed
+danh-gia-kiem-dem-2=Enumeration not completed
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-0=Unfinished
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-1=Fully completed
+kiem-dem-nuoc-da-ket-thuc-dieu-tra-2=Partly completed
+ten-chu-ho-dung-voi-ds-kiem-dem-=
+ten-chu-ho-dung-voi-ds-kiem-dem-0=
+ten-chu-ho-dung-voi-ds-kiem-dem-1=Yes
+ten-chu-ho-dung-voi-ds-kiem-dem-2=No
+gioi-tinh-0=Male
+gioi-tinh-1=Female
+la-chu-ho-khong-0=
+la-chu-ho-khong-1=Yes
+la-chu-ho-khong-2=No
+thanh-phan-ho-gia-dinh-0=
+loai-cong-trinh-cai-tao-=
+loai-cong-trinh-cai-tao-0=
+loai-cong-trinh-cai-tao-1=Right
+loai-cong-trinh-cai-tao-2=No
+
+
+tuong-va-san-co-de-lam-ve-sinh-=
+tuong-va-san-co-de-lam-ve-sinh-0=
+tuong-va-san-co-de-lam-ve-sinh-1=Yes
+tuong-va-san-co-de-lam-ve-sinh-2=No
+
+phia-tren-co-du-kin-dao-=
+phia-tren-co-du-kin-dao-0=
+phia-tren-co-du-kin-dao-1=Yes
+phia-tren-co-du-kin-dao-2=No
+
+san-bi-xi-co-cao-hon-mat-dat-=
+san-bi-xi-co-cao-hon-mat-dat-0=
+san-bi-xi-co-cao-hon-mat-dat-1=Yes
+san-bi-xi-co-cao-hon-mat-dat-2=No
+
+lo-va-cua-chua-phan-co-duoc-bit-kin-=
+lo-va-cua-chua-phan-co-duoc-bit-kin-0=
+lo-va-cua-chua-phan-co-duoc-bit-kin-1=Yes
+lo-va-cua-chua-phan-co-duoc-bit-kin-2=No
+
+nuoc-thai-tu-be-chay-di-dau-=
+nuoc-thai-tu-be-chay-di-dau-0=
+nuoc-thai-tu-be-chay-di-dau-1=into soak holes or tight drain
+nuoc-thai-tu-be-chay-di-dau-2=into holes or drainage ditches
+nuoc-thai-tu-be-chay-di-dau-3=into waterkeeping place or uncovered drain
+nuoc-thai-tu-be-chay-di-dau-4=unobservable
+
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-=
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-0=
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-1=Yes
+nha-tieu-co-bi-ngap-lut-khi-mua-lon-2=No
+
+co-cong-trinh-ve-sinh-khong-=
+co-cong-trinh-ve-sinh-khong-0=
+co-cong-trinh-ve-sinh-khong-1=Yes
+co-cong-trinh-ve-sinh-khong-2=No
+
+co-phai-cong-trinh-cai-tao-=
+co-phai-cong-trinh-cai-tao-0=
+co-phai-cong-trinh-cai-tao-1=Right
+co-phai-cong-trinh-cai-tao-2=No
+
+cong-trinh-co-sach-se-=
+cong-trinh-co-sach-se-0=
+cong-trinh-co-sach-se-1=Yes
+cong-trinh-co-sach-se-2=No
+
+mui-nuoc-tieu-va-phan-=
+mui-nuoc-tieu-va-phan-0=
+mui-nuoc-tieu-va-phan-1=
+mui-nuoc-tieu-va-phan-2=
+
+cong-trinh-co-dam-bao-che-=
+cong-trinh-co-dam-bao-che-0=
+cong-trinh-co-dam-bao-che-1=less smelly
+cong-trinh-co-dam-bao-che-2=Smelly
+
+nap-be-xi-be-phan-con-=
+nap-be-xi-be-phan-con-0=
+nap-be-xi-be-phan-con-1=Yes
+nap-be-xi-be-phan-con-2=No
+
+
+nuoc-hoac-phan-bun-tran-ra-ngoai-=
+nuoc-hoac-phan-bun-tran-ra-ngoai-0=
+nuoc-hoac-phan-bun-tran-ra-ngoai-1=Yes
+nuoc-hoac-phan-bun-tran-ra-ngoai-2=No
+
+nguon-nuoc-chinh-cach-be-chua-bao-xa-=
+nguon-nuoc-chinh-cach-be-chua-bao-xa-0=
+nguon-nuoc-chinh-cach-be-chua-bao-xa-1=>\=10m
+nguon-nuoc-chinh-cach-be-chua-bao-xa-2=<10m
+
+
+thong-tin-dia-diem-kiem-dem=Information of enumeration address
+
+ho-ten-nguoi-tra-loi=Full name of answerer
+
+
+nguon-nuoc=Water source
+nguon-nuoc-rua-tay-co-dat=Handwash source achieves 2570/QĐ-BNN-TCTL
+nguon-nuoc-rua-tay-co-dat-=
+nguon-nuoc-rua-tay-co-dat-0=
+nguon-nuoc-rua-tay-co-dat-1=Yes
+nguon-nuoc-rua-tay-co-dat-2=No
+nguon-nuoc-uong-co-dat=domestic water source achieves QCVN 02 2009/BYT
+nguon-nuoc-uong-co-dat-=
+nguon-nuoc-uong-co-dat-0=
+nguon-nuoc-uong-co-dat-1=Yes
+nguon-nuoc-uong-co-dat-2=No
+chi-tet-cong-trinh-rua-tay-=
+chi-tet-cong-trinh-rua-tay-0=
+chi-tet-cong-trinh-rua-tay-1=Water available
+chi-tet-cong-trinh-rua-tay-2=Soap available
+chi-tet-cong-trinh-rua-tay-3=Water and soap available
+chi-tet-cong-trinh-rua-tay-4=No water and available
+so-phieu-xet-nghiem=Number of test orders
+anh-phieu-chung-nhan=Image of certificate
+
+
+
+gioi-tinh-nguoi-tra-loi=Gender of answerer
+
+cong-trinh-co-sach-se=Clean facility
+tuong-va-san-co-de-lam-ve-sinh=Wall and floor are easy to clean
+mui-nuoc-tieu-va-phan=Smell like urine and excrement
+phia-tren-co-du-kin-dao=Enough unobstructive top
+
+san-bi-xi-co-cao-hon-mat-dat=The floor is 20cm higher than the ground
+nap-be-xi-be-phan-con=Bowl cover, bowl still good
+lo-va-cua-chua-phan-co-duoc-bit-kin=Hole and cover closely stopped
+nuoc-hoac-phan-bun-tran-ra-ngoai=Water or mud overflows 
+nuoc-thai-tu-be-chay-di-dau=Where is the flow of bowl sewage
+nguon-nuoc-chinh-cach-be-chua-bao-xa=The distance between water source and toilet tank
+nha-tieu-co-bi-ngap-lut-khi-mua-lon=Do latrines flood if a heavy rain
+ket-qua-dieu-tra=Investigation result
+trang-thai-dieu-tra=Status of investigation
+ly-do-khong-hoan-thanh=Reason for not being completed
+thong-tin-cong-trinh-kiem-dem=Information of sanitation enumeration facilities
+so-ca=Number of shifts
+vai-tro-nguoi-tra-loi=Title
+dien-thoai-thong-tin-lien-he=Contact number
+so-nha-tieu=Number of toilets
+so-nguoi-trong-ca=Number of people per shift
+thong-tin-dieu-tra-vs-cong-trinh=Investigation information of sanitation facility
+chi-tiet-nha-tieu=latrine in detail
+so-ho-tieu=Number of latrines
+phia-tren-co-che-mua-gio=The top covered out of unfavourable weather
+co-cong-trinh-rua-tay=Handwash facility available
+chi-tet-cong-trinh-rua-tay=Handwash facility available in detail
+loai-cong-trinh-0=
+anh-trong-nha-tieu=Image of the inside latrine
+ban-co-chac-chan-muon-xoa-vs-cong-trinh-nay=Are you sure to delete this sanitation facility
+
+phieu-xet-nghiem-co= Yes
+phieu-xet-nghiem-khong= No
+co-phieu-xet-nghiem=Whether there is the test order or not

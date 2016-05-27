@@ -1,4 +1,5 @@
 <%@page import="vn.dtt.sol.ns.util.WebKeys"%>
+<%@page import="vn.dtt.cmon.user.dao.model.UserMapping"%>
 <%
 /**
  * Copyright (c) 2000-2012 Liferay, Inc. All rights reserved.
@@ -117,6 +118,7 @@
 <%
 
 	
+
 	String currentURL = PortalUtil.getCurrentURL(request);
 	
 	String redirect = ParamUtil.getString(request, WebKeys.REDIRECT, currentURL);

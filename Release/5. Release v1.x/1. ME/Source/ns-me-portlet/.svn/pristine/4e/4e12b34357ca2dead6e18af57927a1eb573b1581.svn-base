@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<custom-sql>
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DauNoiNuocFinder.findDauNoiNuoc">
+		<![CDATA[
+			SELECT
+				me_daunoinuoc.*
+			FROM
+				me_thongtinkiemdemnuoc 
+				LEFT JOIN me_daunoinuoc ON me_thongtinkiemdemnuoc.daunoinuocid = me_daunoinuoc.ID
+				LEFT JOIN me_kiemdemvien ON me_kiemdemvien.TAIKHOAN = me_thongtinkiemdemnuoc.taikhoan
+			WHERE
+				me_thongtinkiemdemnuoc.MATINH = ?
+			AND me_thongtinkiemdemnuoc.MAHUYEN = ?
+			AND me_thongtinkiemdemnuoc.MAXA = ?
+			AND me_daunoinuoc.TRAMCAPNUOCID = ?
+			AND me_daunoinuoc.TENCHUHO LIKE ?
+			AND me_thongtinkiemdemnuoc.daketthucdieutra = ?
+			AND me_thongtinkiemdemnuoc.danhgiakiemdem = ?
+			AND me_thongtinkiemdemnuoc.taikhoan = ?
+			AND me_kiemdemvien.idQuanLy = ?
+			AND DATE_FORMAT(me_daunoinuoc.NGAYTAO,'%d-%m-%Y') = ?
+			AND DATE_FORMAT(me_thongtinkiemdemnuoc.ngaykiemdem,'%d-%m-%Y') = ?
+			AND me_daunoinuoc.NAMBAOCAO = ?
+			AND me_daunoinuoc.IDNGUOITAO = ?
+		]]>
+	</sql>
+	
+	<sql id="vn.dtt.sol.ns.tramcap.dao.service.persistence.DauNoiNuocFinder.countDauNoiNuoc">
+		<![CDATA[
+			SELECT
+				COUNT(*) AS COUNT_VALUE
+			FROM
+				me_thongtinkiemdemnuoc 
+				LEFT JOIN me_daunoinuoc ON me_thongtinkiemdemnuoc.daunoinuocid = me_daunoinuoc.ID
+				LEFT JOIN me_kiemdemvien ON me_kiemdemvien.TAIKHOAN = me_thongtinkiemdemnuoc.taikhoan
+			WHERE
+				me_thongtinkiemdemnuoc.MATINH = ?
+			AND me_thongtinkiemdemnuoc.MAHUYEN = ?
+			AND me_thongtinkiemdemnuoc.MAXA = ?
+			AND me_daunoinuoc.TRAMCAPNUOCID = ?
+			AND me_daunoinuoc.TENCHUHO LIKE ?
+			AND me_thongtinkiemdemnuoc.daketthucdieutra = ?
+			AND me_thongtinkiemdemnuoc.danhgiakiemdem = ?
+			AND me_thongtinkiemdemnuoc.taikhoan = ?
+			AND me_kiemdemvien.idQuanLy = ?
+			AND DATE_FORMAT(me_daunoinuoc.NGAYTAO,'%d-%m-%Y')  = ?
+			AND DATE_FORMAT(me_thongtinkiemdemnuoc.ngaykiemdem,'%d-%m-%Y')  = ?
+			AND me_daunoinuoc.NAMBAOCAO = ?
+			AND me_daunoinuoc.IDNGUOITAO = ?
+		]]>
+	</sql>
+	
+</custom-sql>

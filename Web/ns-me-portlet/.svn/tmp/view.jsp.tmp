@@ -1,0 +1,319 @@
+<<<<<<< .mine
+<%@page import="com.liferay.portal.kernel.util.StringPool"%>
+=======
+
+<%@page import="vn.dtt.cmon.user.dao.model.UserMapping"%>
+<%
+
+/**
+ * Copyright (c) 2000-2013 Liferay, Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or modify it under
+ * the terms of the GNU Lesser General Public License as published by the Free
+ * Software Foundation; either version 2.1 of the License, or (at your option)
+ * any later version.
+ *
+ * This library is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more
+ * details.
+ */
+%>
+<%@page import="com.liferay.portal.kernel.log.Log"%>
+<%@page import="com.liferay.portal.kernel.log.LogFactoryUtil"%>
+<%@page import="vn.dtt.sol.ns.business.UserMappingBusiness"%>
+>>>>>>> .r2118
+<%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
+<%@page import="java.util.Calendar"%>
+
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+<%@ taglib uri="http://liferay.com/tld/security" prefix="liferay-security" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+
+<%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
+ <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+<%@page import="javax.portlet.PortletURL"%>
+<%@include file="init.jsp" %>
+
+<%
+	
+<<<<<<< .mine
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="" target="">
+				<img src="<%= ctxPath %>/images/dli11.jpg" alt="bookingsChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>		
+		 <aui:column  >
+		   --------------------------
+		 </aui:column>
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="<%= piechartURL.toString()%>" >
+				<img src="<%= ctxPath %>/images/dli12.jpg" alt="salesChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+=======
+	
+	UserMapping userMapping = UserMappingBusiness.getUserMapping(user);
+	int userType = userMapping.getUserType();
+	String maTinh = userMapping.getOrgCode1();
+	_logdashboardview.info("--html.portlet.dasboard.view.jsp--userType--"+userType+"--maTinh--"+maTinh+"==");
+%>
+>>>>>>> .r2118
+
+<<<<<<< .mine
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>			
+	</aui:row>
+	<aui:row>	
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="" target="">
+				<img src="<%= ctxPath %>/images/dli21.jpg" alt="bookingsChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+		
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+=======
+>>>>>>> .r2118
+
+<<<<<<< .mine
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>			
+		 <aui:column  >
+		   --------------------------
+		 </aui:column>
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="<%= piechartURL.toString()%>" >
+				<img src="<%= ctxPath %>/images/dli22.jpg" alt="salesChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+=======
+<c:choose>
+	<c:when test="<%=  userType == 1  %>">
+		<liferay-util:include page='<%= templatePath + "view_dashboard_tu.jsp" %>' servletContext="<%= application %>" />
+	</c:when>
+	<c:otherwise>
+		<liferay-util:include page='<%= templatePath + "view_dashboard.jsp" %>' servletContext="<%= application %>" />
+	</c:otherwise>
+</c:choose>
+>>>>>>> .r2118
+
+<<<<<<< .mine
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>			
+	</aui:row>	
+	
+	</aui:layout>
+</aui:form>
+
+<style type="scss">
+.aui-layout-content {
+padding-left: 20em;
+.col1 {
+margin-left: -20em;
+position: relative;
+width: 20em;
+}
+.col2 {
+display: inline-block;
+float: none;
+width: 99.5%;
+/* IE 8 incomatibility was droping the second column down so I had
+to make it slight narrower, this value worked. */
+}
+}
+</style>=======
+>>>>>>> .r2118

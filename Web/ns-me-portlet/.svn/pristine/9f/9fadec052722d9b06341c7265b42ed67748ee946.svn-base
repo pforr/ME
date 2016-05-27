@@ -1,0 +1,284 @@
+<%@page import="com.liferay.portal.kernel.portlet.LiferayWindowState"%>
+<%@page import="java.util.Calendar"%>
+
+<%@ taglib uri="http://java.sun.com/portlet_2_0" prefix="portlet" %>
+<%@ taglib uri="http://liferay.com/tld/ui" prefix="liferay-ui" %>
+<%@ taglib uri="http://liferay.com/tld/portlet" prefix="liferay-portlet" %>
+<%@ taglib uri="http://liferay.com/tld/security" prefix="liferay-security" %>
+<%@ taglib uri="http://liferay.com/tld/theme" prefix="liferay-theme" %>
+
+<%@ taglib uri="http://liferay.com/tld/util" prefix="liferay-util" %>
+ <%@ taglib prefix="aui" uri="http://liferay.com/tld/aui" %>
+
+<%@page import="javax.portlet.PortletURL"%>
+<%@ page pageEncoding="UTF-8" %>
+<portlet:defineObjects />
+<%
+String ctxPath = request.getContextPath();
+
+	Calendar cal = Calendar.getInstance();
+		 
+	int currYear = cal.get(Calendar.YEAR);
+%>
+
+
+
+
+<portlet:actionURL name="piechart" var="piechartURL" /> 
+<ul>
+	<%
+		for (int year = 2015; year <= currYear; year++) {
+	%>
+		<portlet:renderURL var="rowURL">
+			<portlet:param name="mvcPath" value="/html/portlet/dashboard/view.jsp" />
+			<portlet:param name="namBaoCao" value="<%= Integer.toString(year)  %>"/>			
+			<portlet:param name="isTrungUong" value="true"/>
+		</portlet:renderURL>
+		
+		<li> <a href="<%= rowURL %>"><%= year %></a> </li>
+	<%
+		}
+	%>
+</ul>
+
+<liferay-portlet:renderURL varImpl="searchURL" windowState="<%=LiferayWindowState.NORMAL.toString()%>">
+	<portlet:param name="mvcPath" value="/html/portlet/dashboard/view.jsp" />
+	<portlet:param name="namBaoCao" value="<%= Integer.toString(currYear-1) %>"/>
+</liferay-portlet:renderURL>
+
+
+
+<aui:form name="piechartfrm" action="${piechartURL}" method="POST">
+
+
+	<aui:layout>
+	<aui:row>
+		
+	
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="" target="">
+				<img src="<%= ctxPath %>/images/dli11.jpg" alt="bookingsChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>		
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="<%= piechartURL.toString()%>" >
+				<img src="<%= ctxPath %>/images/dli12.jpg" alt="salesChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>			
+	</aui:row>
+	<aui:row>	
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="" target="">
+				<img src="<%= ctxPath %>/images/dli21.jpg" alt="bookingsChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>			
+		<aui:column>
+			<aui:fieldset>
+				<aui:a href="<%= piechartURL.toString()%>" >
+				<img src="<%= ctxPath %>/images/dli22.jpg" alt="salesChart" height="300" width="200">
+				</aui:a>
+			</aui:fieldset>
+		</aui:column>
+		<aui:column>
+		<br>
+		<br>
+			<aui:row>
+			<aui:fieldset>
+				<aui:a href="dashboard" >
+					Bắc Ninh 28%
+				</aui:a>
+			</aui:fieldset>	
+			</aui:row>
+			<aui:row>
+				<aui:a href="dashboard" >
+				Hà Nam 67%
+				</aui:a>
+			</aui:row>
+
+			<aui:row>
+				<aui:a href="Hà Nội" >
+				Hà Nội 72%
+				</aui:a>
+			</aui:row> 
+			<aui:row>
+				<aui:a href="Hưng Yên" >
+				Hưng Yên 98%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Phú Thọ" >
+				Phú Thọ 77%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Quảng Ninh" >
+				Quảng Ninh 82%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="hanh Hóa" >
+				Thanh Hóa 61%
+				</aui:a>
+			</aui:row>
+			<aui:row>
+				<aui:a href="Vĩnh Phúc" >
+				Vĩnh Phúc 77%
+				</aui:a>
+			</aui:row>
+			
+		</aui:column>			
+	</aui:row>	
+	
+	</aui:layout>
+</aui:form>

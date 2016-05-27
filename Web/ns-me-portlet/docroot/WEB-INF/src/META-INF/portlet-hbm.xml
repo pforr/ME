@@ -371,17 +371,20 @@
 		<property name="loaiBaoCao" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="LOAIBAOCAO" />
 		<property name="nguoiLap" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOILAP" />
 		<property name="nguoiDuyet" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NGUOIDUYET" />
+		<property name="donViBaoCao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="DONVIBAOCAO" />
 		<property name="soBaoCao" type="com.liferay.portal.dao.orm.hibernate.StringType" column="SOBAOCAO" />
 		<property name="ngayBaoCao" type="org.hibernate.type.TimestampType" column="NGAYBAOCAO" />
 		<property name="trangThai" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="TRANGTHAI" />
 		<property name="luuTruPDF1Id" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LUUTRUPDF_1" />
 		<property name="luuTruPDF2Id" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LUUTRUPDF_2" />
+		<property name="luuTruPDF3Id" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LUUTRUPDF_3" />
 		<property name="luuTruCSV1Id" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LUUTRUCSV_1" />
 		<property name="luuTruCSV2Id" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LUUTRUCSV_2" />
-		<property name="keHoachNam" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="ngayPheDuyet" type="org.hibernate.type.TimestampType" />
-		<property name="baoCaoChuongTrinh" type="com.liferay.portal.dao.orm.hibernate.StringType" />
-		<property name="ngayDang" type="org.hibernate.type.TimestampType" />
+		<property name="luuTruCSV3Id" type="com.liferay.portal.dao.orm.hibernate.LongType" column="LUUTRUCSV_3" />
+		<property name="keHoachNam" type="com.liferay.portal.dao.orm.hibernate.StringType" column="KEHOACHNAM" />
+		<property name="ngayPheDuyet" type="org.hibernate.type.TimestampType" column="NGAYPHEDUYET" />
+		<property name="baoCaoChuongTrinh" type="com.liferay.portal.dao.orm.hibernate.StringType" column="BAOCAOCHUONGTRINH" />
+		<property name="ngayDang" type="org.hibernate.type.TimestampType" column="NGAYDANG" />
 	</class>
 	<class name="vn.dtt.sol.ns.baocaodli.dao.model.impl.BaoCaoDLITongHopImpl" table="ME_TONGHOPDLI">
 		<cache usage="read-write" />

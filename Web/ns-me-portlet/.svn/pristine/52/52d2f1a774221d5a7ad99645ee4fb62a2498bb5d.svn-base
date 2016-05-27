@@ -1,0 +1,15 @@
+package vn.dtt.sol.ns.reporting.model.baocaothongke.ctcc;
+
+import com.liferay.portal.kernel.log.Log;
+import com.liferay.portal.kernel.log.LogFactoryUtil;
+
+public class ThongKeCTCCExport {
+	private static Log log = LogFactoryUtil.getLog(ThongKeCTCCExport.class);
+	public static ThongKeCTCC getModel(String nam, String maTinh){
+		log.info("==START ThongKeCTCCExport Tinh=ThongKeCTCCExport===");
+		ThongKeCTCC result = new ThongKeCTCC();
+		
+		log.info("==END ThongKeCTCCExport Tinh=ThongKeCTCCExport===");
+		return result;
+	}
+}
